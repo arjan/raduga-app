@@ -1,5 +1,11 @@
 body {
-    //
+    
+    transition: all 1500ms;
+    background: white;
+
+    &.cloak {
+        background: black;
+    }
 }
 
 div.slider {

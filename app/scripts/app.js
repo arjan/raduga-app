@@ -6,6 +6,7 @@ angular.module('app', ['ionic'])
     ionic.Platform.ready(function(){
       console.log('ready');
 
+      $("body").removeClass("cloak");
     });    
   })
 ;
