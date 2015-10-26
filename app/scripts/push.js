@@ -18,8 +18,8 @@ angular.module('app')
         parsePlugin.initialize(appId, clientKey, function() {
           console.log("Parse initialized");
 
-          parsePlugin.getInstallationId(function(id) {
-            console.log("Installation ID: " + id);
+          parsePlugin.getInstallationId(function(userId) {
+            console.log("Installation ID: " + userId);
 
             parsePlugin.getSubscriptions(function(subscriptions) {
               subscriptions = subscriptions.substr(1,subscriptions.length-2).split(", ");
@@ -41,11 +41,17 @@ angular.module('app')
                     
                   $rootScope.closestCity = r.cities[0];
 
+                  var subs = [];
                   for (var i=0; i<r.cities.length; i++) {
                     var id = r.cities[i].id;
+                    subs.push(id);
                     parsePlugin.subscribe(id, function() {
                     });
                   }
+
+                  // update user account on startup
+                  API.updateUser(userId, {closest: r.cities[0], subscriptions: subs});
+                  
                 });
                 
               });

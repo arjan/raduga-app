@@ -3,6 +3,8 @@ angular.module('app')
 
     var baseUrl = 'http://raduga.miraclethings.nl/app';
 
+    var userId = 
+
     var jsonGetter = function(path) {
       return function(args) {
         var qs = args ? "?" + $.param(args) : "";
@@ -17,6 +19,9 @@ angular.module('app')
       getClosestCities: jsonGetter('/closest-cities'),
       getCloudsURL: function() {
         return baseUrl.replace('/app', '/latest/clouds.png');
+      },
+      updateUser: function(userId, data) {
+        return $http.post(baseUrl + '/user/' + userId, data);
       }
     };
   })
