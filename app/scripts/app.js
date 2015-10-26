@@ -1,4 +1,4 @@
-angular.module('app', ['ionic'])
+angular.module('app', ['ionic', 'templates'])
 
   .run(function() {
     console.log('hi');
