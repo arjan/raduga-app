@@ -11,5 +11,14 @@
         <div ng-show="!cities.length">
             No rainbow alerts at the moment.
         </div>
+
+        <div ng-show="closestCity">
+            You are near: <span> {{ closestCity.name_en }}</span>
+        </div>
+
+        <div ng-show="!closestCity">
+            You are too far from a Russian city to receive rainbow notifications.
+        </div>
+        
     </div>
 </div>

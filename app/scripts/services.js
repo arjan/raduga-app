@@ -14,6 +14,7 @@ angular.module('app')
     
     return {
       getRainbowCities: jsonGetter('/rainbow-cities'),
+      getClosestCities: jsonGetter('/closest-cities'),
       getCloudsURL: function() {
         return baseUrl.replace('/app', '/latest/clouds.png');
       }
