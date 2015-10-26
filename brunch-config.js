@@ -9,7 +9,7 @@ exports.config = {
 
   paths: {
     "public": 'www',
-    "watched": ['app']
+    "watched": ['app', 'vendor']
   },
  
   files: {
@@ -24,6 +24,8 @@ exports.config = {
         'js/app.js': /^app/
       },
       order: {
+        after: [
+        ]
       }
     },
     stylesheets: {

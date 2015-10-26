@@ -1,4 +1,4 @@
-angular.module('app', ['ionic', 'templates'])
+angular.module('app', ['ionic', 'ngTouch', 'templates'])
 
   .run(function() {
     console.log('hi');
