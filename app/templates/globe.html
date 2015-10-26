@@ -1,3 +1,15 @@
 <div ng-controller="GlobeCtrl">
     <globe></globe>
+
+    <div class="cities">
+        <div ng-show="cities.length > 0">
+            <div ng-repeat="c in cities">
+                {{ c.name_en }}
+            </div>
+        </div>
+
+        <div ng-show="!cities.length">
+            No rainbow alerts at the moment.
+        </div>
+    </div>
 </div>

@@ -1,22 +1,21 @@
 angular.module('app')
-  .directive('globe', function globe() {
+  .directive('globe', function globe(API) {
     return {
       restrict: 'E',
       template: '<div class="globe"></div>',
       replace: true,
       link: function(scope, elem) {
-        console.log('globe');
+
+        THREE.ImageUtils.crossOrigin = 'anonymous';
+
         $(elem).css('height', $(elem).width());
         
         var width = $(elem).width();
         var height = $(elem).height();
 
-        console.log(width, height);
-
-
 	    // Earth params
 	    var radius   = 0.5,
-		    segments = 64,
+		    segments = 32,
 		    rotation = 6;  
 
 	    var scene = new THREE.Scene();
@@ -24,12 +23,12 @@ angular.module('app')
 	    var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 10000);
 	    camera.position.z = 1.5;
 
-	    var renderer = new THREE.WebGLRenderer();
+	    var renderer = new THREE.WebGLRenderer({antialias: true});
 	    renderer.setSize(width, height);
 
         window.r = renderer;
         
-	    scene.add(new THREE.AmbientLight(0x111111));
+	    scene.add(new THREE.AmbientLight(0x222222));
 
         var sphere = createSphere(radius, segments);
 	    sphere.rotation.y = rotation; 
@@ -66,7 +65,7 @@ angular.module('app')
 		    new THREE.MeshPhongMaterial({
 		      map:         THREE.ImageUtils.loadTexture('images/earth.jpg'),
 		      bumpMap:     THREE.ImageUtils.loadTexture('images/bump.jpg'),
-		      bumpScale:   -0.005
+		      bumpScale:   0.005
 		      //specularMap: THREE.ImageUtils.loadTexture('images/water_4k.png'),
 		      //specular:    new THREE.Color('grey')								
 		    })
@@ -74,11 +73,16 @@ angular.module('app')
 	    }
 
 	    function createClouds(radius, segments) {
+          var clouds = THREE.ImageUtils.loadTexture(API.getCloudsURL());
+          clouds.minFilter = THREE.NearestFilter;
 	      return new THREE.Mesh(
 		    new THREE.SphereGeometry(radius + 0.003, segments, segments),			
 		    new THREE.MeshPhongMaterial({
-		      map:         THREE.ImageUtils.loadTexture('images/weather2.png'),
-		      transparent: true
+		      map:         clouds,
+		      transparent: true,
+              specular: 0xffffff,
+              shininess: 10
+              
 		    })
 	      );		
 	    }

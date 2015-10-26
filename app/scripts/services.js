@@ -13,7 +13,10 @@ angular.module('app')
     };
     
     return {
-      getRainbowCities: jsonGetter('/rainbow-cities')
+      getRainbowCities: jsonGetter('/rainbow-cities'),
+      getCloudsURL: function() {
+        return baseUrl.replace('/app', '/latest/clouds.png');
+      }
     };
   })
 ;

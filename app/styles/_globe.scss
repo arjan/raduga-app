@@ -1,8 +1,18 @@
 > div  {
+    position: relative;
+    
     background: black;
     color: white;
 
     div.globe {
         height: 100%;
+    }
+
+    div.cities {
+        position: absolute;
+
+        bottom: 60px;
+        left: 0; right: 0;
+        text-align: center;
     }
 }
