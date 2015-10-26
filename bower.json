@@ -1,0 +1,10 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "~1.4.7",
+    "lodash": "~3.10.1",
+    "ionic": "~1.1.0"
+  }
+}
