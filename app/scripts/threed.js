@@ -23,7 +23,7 @@ angular.module('app')
 	    var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 10000);
 	    camera.position.z = 1.5;
 
-	    var renderer = new THREE.WebGLRenderer({antialias: true});
+	    var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 	    renderer.setSize(width, height);
 
         window.r = renderer;
@@ -43,7 +43,7 @@ angular.module('app')
         var clouds = createClouds(radius, segments);
 	    clouds.rotation.y = rotation;
 	    scene.add(clouds);
-
+        
 	    var controls = new THREE.TrackballControls(camera, elem[0]);
         controls.noZoom = true;
         controls.noPan = true;
@@ -85,16 +85,6 @@ angular.module('app')
               
 		    })
 	      );		
-	    }
-
-	    function createStars(radius, segments) {
-	      return new THREE.Mesh(
-		    new THREE.SphereGeometry(radius, segments, segments), 
-		    new THREE.MeshBasicMaterial({
-              color: 'black',
-		      side: THREE.BackSide
-		    })
-	      );
 	    }
       }
     };
