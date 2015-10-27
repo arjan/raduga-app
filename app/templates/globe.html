@@ -2,21 +2,26 @@
     <globe></globe>
 
     <div class="cities">
-        <div ng-show="cities.length > 0">
-            <div ng-repeat="c in cities">
-                {{ c.name_en }}
-            </div>
+        <div ng-show="cities.length > 0" class="cityitem">
+            <i class="icon ion-ios-rainy"></i>
+
+            <span>Rainbows spotted near:</span>
+
+            <span ng-repeat="c in cities">{{ c.name_en }}{{$last ? '' : ', '}}</span>
         </div>
 
-        <div ng-show="!cities.length">
+        <div ng-show="!cities.length" class="cityitem">
+            <i class="icon ion-alert-circled"></i>
             No rainbow alerts at the moment.
         </div>
 
-        <div ng-show="closestCity">
+        <div ng-show="closestCity" class="cityitem status">
+            <i class="icon ion-ios-location"></i>
             You are near: <span> {{ closestCity.name_en }}</span>
         </div>
 
-        <div ng-show="!closestCity">
+        <div ng-show="!closestCity" class="cityitem status">
+            <i class="icon ion-ios-location"></i>
             You are too far from a Russian city to receive rainbow notifications.
         </div>
         

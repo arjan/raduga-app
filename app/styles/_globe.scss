@@ -10,9 +10,23 @@
 
     div.cities {
         position: absolute;
-
-        bottom: 60px;
+        bottom: 50px;
         left: 0; right: 0;
-        text-align: center;
+            text-align: left;
+
+        div.cityitem {
+            padding: 10px 20px;
+            color: white;
+
+            i {
+                float: left;
+                margin-right: 10px;
+                font-size: 32px;
+            }
+        }
+
+        div.status {
+            color: $highlight;
+        }
     }
 }
