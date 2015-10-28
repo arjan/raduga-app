@@ -23,7 +23,10 @@ angular.module('app')
             }
             
             parsePlugin.getSubscriptions(function(subscriptions) {
-              subscriptions = subscriptions.substr(1,subscriptions.length-2).split(", ");
+              if (typeof subscriptions == 'string') {
+                subscriptions = subscriptions.substr(1,subscriptions.length-2).split(", ");
+              }
+
               console.log("Subscriptions: " + JSON.stringify(subscriptions));
 
               for (var i=0; i<subscriptions.length; i++) {
