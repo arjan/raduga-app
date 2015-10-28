@@ -1,0 +1,10 @@
+cordova-plugin-console
+cordova-plugin-crosswalk-webview
+cordova-plugin-device
+cordova-plugin-geolocation
+cordova-plugin-splashscreen
+cordova-plugin-statusbar
+cordova-plugin-whitelist
+ionic-plugin-keyboard
+https://github.com/avivais/phonegap-parse-plugin
+
