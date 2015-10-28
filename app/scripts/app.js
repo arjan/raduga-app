@@ -1,4 +1,4 @@
-angular.module('app', ['ionic', 'ngTouch', 'templates'])
+angular.module('app', ['ionic', 'ngCordova', 'ngTouch', 'templates'])
 
   .run(function(PushService) {
 

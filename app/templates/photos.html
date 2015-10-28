@@ -1,3 +1,19 @@
-<div>
-    <h1>Photos</h1>
+<div ng-controller="PhotosCtrl">
+    <ion-content class="photo-scroll">
+
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <ion-list>
+            <div ng-repeat="photo in photos" class="photo">
+                <img ng-src="{{ photo.images.standard_resolution.url }}" />
+            </div>
+        </ion-list>
+
+    </ion-content>
+    
+    <button class="camera" ng-click="takePicture()"><i class="icon ion-camera"></i></button>
+
 </div>

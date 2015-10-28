@@ -28,7 +28,8 @@ ion-slide {
         @import "globe";
     }
 
-    &.photos {
+    &.photos ng-include {
+        @import "photos";
     }
 
     &.about {

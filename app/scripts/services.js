@@ -18,6 +18,11 @@ angular.module('app')
       },
       updateUser: function(userId, data) {
         return $http.post(Config.baseUrl + '/user/' + userId, data);
+      },
+      getRainbowPhotos: function() {
+        return $http.jsonp('https://api.instagram.com/v1/tags/rainbow/media/recent?callback=JSON_CALLBACK&client_id=' + Config.instagramClientKey).then(function(r) {
+          return r.data;
+        });
       }
     };
   })

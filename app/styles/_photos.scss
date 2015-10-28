@@ -1,0 +1,25 @@
+> div  {
+
+    button.camera {
+        background: red;
+
+        border: 0;
+        border-radius: 50%;
+        font-size: 30px;
+        width: 60px; height: 60px;
+        color: white;
+        box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
+        position: absolute;
+        bottom: 40px;
+        right: 30px;
+        
+    }
+
+    div.photo {
+        img {
+            width: 100%;
+        }
+    }
+    
+}
