@@ -12,7 +12,7 @@ angular.module('app')
     
     return {
       getRainbowCities: jsonGetter('/app/rainbow-cities'),
-      getClosestCities: jsonGetter('/closest-cities'),
+      getClosestCities: jsonGetter('/app/closest-cities'),
       getCloudsURL: function() {
         return Config.baseUrl + "/latest/clouds.png";
       },
@@ -20,6 +20,40 @@ angular.module('app')
         return $http.post(Config.baseUrl + '/app/user/' + userId, data);
       },
       getRainbowPhotos: jsonGetter('/app/photos')
+    };
+  })
+
+  .service('GetCitiesNearGeoLocation', function GetCityNearGeoLocation(API, Locale, Config, $rootScope, $q) {
+    return function() {
+
+      var d = $q.defer();
+      
+      // get the position
+      navigator.geolocation.getCurrentPosition(function(position) {
+
+        console.log('pos');
+
+        API.getClosestCities({lat: position.coords.latitude, lon: position.coords.longitude, limit: 1}).then(
+          function(r) {
+            if (r.cities.length > 0) {
+              $rootScope.closestCity = r.cities[0];
+            } else {
+              $rootScope.closestCity = false;
+            }
+
+            console.log('cities: ' + JSON.stringify(r.cities));
+
+            // update user account on startup
+            API.updateUser(Config.userId, {closest: $rootScope.closestCity, language: Locale.language()});
+            d.resolve(r.cities);
+          },
+          function(e) {
+            console.log('error...' + JSON.stringify(e));
+          }
+        );
+      });
+
+      return d.promise;
     };
   })
 
@@ -38,7 +72,7 @@ angular.module('app')
           console.log(p.meta);
           var meta = JSON.parse(p.meta);
           var k = 'name_' + Locale.language();
-          ts += ", " + meta[l];
+          ts += ", " + meta[k];
         } catch (e) {
 
         };

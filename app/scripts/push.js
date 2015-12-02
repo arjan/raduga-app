@@ -1,6 +1,6 @@
 angular.module('app')
 
-  .factory('PushService', function PushService(API, Config, Locale, $rootScope) {
+  .factory('PushService', function PushService(API, Config, Locale, $rootScope, GetCitiesNearGeoLocation) {
 
     return {
       init: function() {
@@ -38,32 +38,16 @@ angular.module('app')
                 parsePlugin.subscribe(subscriptions[i], function() {});
               }
 
-              // get the position
-              navigator.geolocation.getCurrentPosition(function(position) {
-
-                console.log('foo');
-
-
-                API.getClosestCities({lat: position.coords.latitude, lon: position.coords.longitude, limit: 1}).then(function(r) {
-                  if (r.cities.length > 0) {
-                    $rootScope.closestCity = r.cities[0];
-                    var subs = [];
-                    for (var i=0; i<r.cities.length; i++) {
-                      var id = r.cities[i].id+postFix;
-                      subs.push(id);
-                      parsePlugin.subscribe(id, function() {
-                      });
-                    }
-                  } else {
-                    $rootScope.closestCity = false;
-                  }
-                  
-                  // update user account on startup
-                  API.updateUser(userId, {closest: r.cities[0], subscriptions: subs, language: Locale.language()});
-                  
-                });
-                
+              GetCitiesNearGeoLocation().then(function(cities) {
+                var subs = [];
+                for (var i=0; i<cities.length; i++) {
+                  var id = cities[i].id+postFix;
+                  subs.push(id);
+                  parsePlugin.subscribe(id, function() {
+                  });
+                }
               });
+              
             });
 
             

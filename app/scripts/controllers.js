@@ -12,7 +12,7 @@ angular.module('app')
 
   })
 
-  .controller('PhotosCtrl', function PhotosCtrl($scope, $timeout, $ionicLoading, API, Config) {
+  .controller('PhotosCtrl', function PhotosCtrl($scope, $rootScope, $timeout, $ionicLoading, API, Config) {
 
     $scope.doRefresh = function() {
       $ionicLoading.show();
@@ -39,8 +39,9 @@ angular.module('app')
           options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
           options.mimeType = "text/plain";
           var c = {"name_en": "Amsterdam"};
-          options.params = {meta: JSON.stringify(c)};
-          
+          options.params = {meta: JSON.stringify($rootScope.closestCity ? $rootScope.closestCity : {})};
+          options.params = {meta: JSON.stringify(c)}; // DEBUG
+
           var ft = new FileTransfer();
           var url = Config.baseUrl + '/app/user/' + Config.userId + '/photo';
           ft.upload(fileURL, url,
