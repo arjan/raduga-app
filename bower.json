@@ -9,6 +9,7 @@
     "jquery": "~2.1.4",
     "three.js": "~0.72.0",
     "ngtouch": "~1.0.1",
-    "ngCordova": "~0.1.20-alpha"
+    "ngCordova": "~0.1.20-alpha",
+    "moment": "~2.10.6"
   }
 }

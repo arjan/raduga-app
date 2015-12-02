@@ -1,29 +1,34 @@
-<div ng-controller="GlobeCtrl">
-    <globe></globe>
+<div ng-controller="GlobeCtrl" time-gradient-background>
+    <div class="background bg1"></div>
+    <div class="background bg2"></div>
+    <div class="container">
+        <globe></globe>
 
-    <div class="cities">
-        <div ng-show="cities.length > 0" class="cityitem">
-            <i class="icon ion-ios-rainy"></i>
+        <div class="cities">
+            <div ng-show="cities.length > 0" class="cityitem">
+                <i class="icon ion-ios-rainy"></i>
 
-            <span>Rainbows spotted near:</span>
+                <span>{{ 'rainbow_spotted_near'|i18n }}</span>
 
-            <span ng-repeat="c in cities">{{ c.name_en }}{{$last ? '' : ', '}}</span>
+                <span ng-repeat="c in cities">{{ c|cityName }}{{$last ? '' : ', '}}</span>
+            </div>
+
+            <div ng-show="!cities.length" class="cityitem">
+                <i class="icon ion-alert-circled"></i>
+                <span>{{ 'no_rainbow_alerts'|i18n }}</span>
+            </div>
+
+            <div ng-show="closestCity" class="cityitem status">
+                <i class="icon ion-ios-location"></i>
+                <span>{{ 'you_are_near'|i18n }} {{ closestCity|cityName }}</span>
+            </div>
+
+            <div ng-show="!closestCity" class="cityitem status">
+                <i class="icon ion-ios-location"></i>
+                <span>{{ 'you_are_too_far'|i18n }}</span>
+            </div>
+            
         </div>
 
-        <div ng-show="!cities.length" class="cityitem">
-            <i class="icon ion-alert-circled"></i>
-            No rainbow alerts at the moment.
-        </div>
-
-        <div ng-show="closestCity" class="cityitem status">
-            <i class="icon ion-ios-location"></i>
-            You are near: <span> {{ closestCity.name_en }}</span>
-        </div>
-
-        <div ng-show="!closestCity" class="cityitem status">
-            <i class="icon ion-ios-location"></i>
-            You are too far from a Russian city to receive rainbow notifications.
-        </div>
-        
     </div>
 </div>

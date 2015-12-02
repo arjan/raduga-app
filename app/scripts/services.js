@@ -11,19 +11,83 @@ angular.module('app')
     };
     
     return {
-      getRainbowCities: jsonGetter('/rainbow-cities'),
+      getRainbowCities: jsonGetter('/app/rainbow-cities'),
       getClosestCities: jsonGetter('/closest-cities'),
       getCloudsURL: function() {
-        return Config.baseUrl.replace('/app', '/latest/clouds.png');
+        return Config.baseUrl + "/latest/clouds.png";
       },
       updateUser: function(userId, data) {
-        return $http.post(Config.baseUrl + '/user/' + userId, data);
+        return $http.post(Config.baseUrl + '/app/user/' + userId, data);
       },
-      getRainbowPhotos: function() {
-        return $http.jsonp('https://api.instagram.com/v1/tags/rainbow/media/recent?callback=JSON_CALLBACK&client_id=' + Config.instagramClientKey).then(function(r) {
-          return r.data;
-        });
+      getRainbowPhotos: jsonGetter('/app/photos')
+    };
+  })
+
+  .filter('photoUrl', function(Config) {
+    return function(p, w) {
+      w = w || 400;
+      return Config.baseUrl + '/photos/' + p.variants[w+''];
+    };
+  })
+
+  .filter('photoMeta', function(Config, Locale) {
+    return function(p) {
+      var ts = moment(p.created).format('DD-MM-YYYY @ HH:mm');
+      if (p.meta) {
+        try {
+          console.log(p.meta);
+          var meta = JSON.parse(p.meta);
+          var k = 'name_' + Locale.language();
+          ts += ", " + meta[l];
+        } catch (e) {
+
+        };
+      }
+      return ts;
+    };
+  })
+
+  .service('Locale', function() {
+    // navigator.globalization ? navigator.globalization.getPreferredLanguage().substr(0,2) : 
+    var lang = navigator.language.substr(0,2);
+    lang = lang != 'ru' ? 'en' : 'ru';
+
+    return {
+      init: function() {
+      },
+      language: function() {
+        return lang;
       }
     };
   })
+
+  .filter('i18n', function(Locale) {
+    var strings = {
+      en: {
+        'rainbow_spotted_near': 'Rainbows spotted near:',
+        'no_rainbow_alerts': 'No rainbow alerts at the moment.',
+        'you_are_near': 'You are near:',
+        'you_are_too_far': 'You are too far from a Russian city to receive rainbow notifications.'
+      },
+      ru: {
+        'rainbow_spotted_near': 'Радуги замечен рядом:',
+        'no_rainbow_alerts': 'Нет радуги оповещения на данный момент.',
+        'you_are_near': 'Вы рядом с:',
+        'you_are_too_far': 'Вы находитесь слишком далеко от города, чтобы получать уведомления радуги.'
+      }
+    };
+
+    return function(str) {
+      return strings[Locale.language()][str] || ("undefined string: " + str);;
+    };
+  })
+
+  .filter('cityName', function(Locale) {
+    return function(c) {
+      if (!c) return null;
+      var k = 'name_' + Locale.language();
+      return c[k];
+    };
+  })
+
 ;

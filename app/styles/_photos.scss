@@ -17,8 +17,20 @@
     }
 
     div.photo {
+        position: relative;
+        height: auto;
+        line-height: 0;
         img {
             width: 100%;
+        }
+        div.meta {
+            line-height: 1.2;
+            display: block;
+            position: absolute;
+            bottom: 8px; left: 8px;
+            background: #fff;
+            color: black;
+            padding: 4px 8px;
         }
     }
     

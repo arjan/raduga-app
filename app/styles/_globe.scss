@@ -1,35 +1,16 @@
-@mixin rainbow {
-
-    background: red; /* not working, let's see some red */
-    background: -moz-linear-gradient( top ,
-                                      rgba(255, 0, 0, 1) 0%,
-                                      rgba(255, 255, 0, 1) 15%,
-                                      rgba(0, 255, 0, 1) 30%,
-                                      rgba(0, 255, 255, 1) 50%,
-                                      rgba(0, 0, 255, 1) 65%,
-                                      rgba(255, 0, 255, 1) 80%,
-                                      rgba(255, 0, 0, 1) 100%);
-    background: -webkit-gradient(linear,  left top,  left bottom, 
-                                 color-stop(0%, rgba(255, 0, 0, 1)), 
-                                 color-stop(15%, rgba(255, 255, 0, 1)),
-                                 color-stop(30%, rgba(0, 255, 0, 1)),
-                                 color-stop(50%, rgba(0, 255, 255, 1)),
-                                 color-stop(65%, rgba(0, 0, 255, 1)),
-                                 color-stop(80%, rgba(255, 0, 255, 1)),
-                                 color-stop(100%, rgba(255, 0, 0, 1)));
-}
 
 > div  {
+
     padding-top: 10%;
 
     background: black;
-    @include rainbow;
     
     position: relative;
     
     color: white;
 
     div.globe {
+        z-index: 1;
         height: 100%;
     }
 
@@ -38,10 +19,15 @@
         bottom: 50px;
         left: 0; right: 0;
         text-align: left;
+        text-shadow: 0 1px 1px rgba(0,0,0,1);
+        background: rgba(0,0,0,0.2);
 
         div.cityitem {
             padding: 10px 20px;
             color: white;
+
+            span {
+            }
 
             i {
                 float: left;
@@ -53,5 +39,10 @@
         div.status {
             color: $highlight;
         }
+    }
+
+    > .background, > .container {
+        position: absolute;
+        top: 0; bottom: 0; right: 0; left: 0;
     }
 }

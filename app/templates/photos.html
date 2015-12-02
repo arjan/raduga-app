@@ -8,7 +8,10 @@
 
         <ion-list>
             <div ng-repeat="photo in photos" class="photo">
-                <img ng-src="{{ photo.images.standard_resolution.url }}" />
+                <img ng-src="{{ photo|photoUrl }}" />
+                <div class="meta">
+                    {{ photo|photoMeta }}
+                </div>
             </div>
         </ion-list>
 
