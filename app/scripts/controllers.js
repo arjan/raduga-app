@@ -24,7 +24,12 @@ angular.module('app')
       });        
     };
 
-    $scope.doRefresh();
+      $scope.doRefresh();
+
+      $scope.share = function() {
+          console.log("share");
+          alert("share");
+      };
 
     $scope.takePicture = function() {
 

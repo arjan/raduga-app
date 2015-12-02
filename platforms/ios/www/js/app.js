@@ -1,4 +1,4 @@
-angular.module('app', ['ionic', 'ngCordova', 'ngTouch', 'templates'])
+angular.module('app', ['ionic', 'ng-mfb', 'ngCordova', 'ngTouch', 'templates'])
 
   .run(function(Locale, PushService) {
 
@@ -52,7 +52,12 @@ angular.module('app')
       });        
     };
 
-    $scope.doRefresh();
+      $scope.doRefresh();
+
+      $scope.share = function() {
+          console.log("share");
+          alert("share");
+      };
 
     $scope.takePicture = function() {
 

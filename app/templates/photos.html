@@ -12,11 +12,14 @@
                 <div class="meta">
                     {{ photo|photoMeta }}
                 </div>
+                <div class="share">
+                    <i class="icon ion-share" ng-click="share(p)"></i>
+                </div>
             </div>
         </ion-list>
 
     </ion-content>
     
-    <button class="camera" ng-click="takePicture()"><i class="icon ion-camera"></i></button>
+    <button mfb-button icon="ion-camera" ng-click="takePicture()"></button>
 
 </div>

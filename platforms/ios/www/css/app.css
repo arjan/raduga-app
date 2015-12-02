@@ -444,29 +444,23 @@ ion-slide.globe ng-include > div {
     left: 0; }
 
 /* line 3, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
-ion-slide.photos ng-include > div button.camera {
-  background: red;
-  border: 0;
-  border-radius: 50%;
-  font-size: 30px;
-  width: 60px;
-  height: 60px;
-  color: white;
-  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+ion-slide.photos ng-include > div li[mfb-button] {
   position: absolute;
   bottom: 40px;
   right: 30px; }
+  /* line 4, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  ion-slide.photos ng-include > div li[mfb-button] a {
+    background: blue; }
 
-/* line 19, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+/* line 13, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
 ion-slide.photos ng-include > div div.photo {
   position: relative;
   height: auto;
   line-height: 0; }
-  /* line 23, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  /* line 17, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
   ion-slide.photos ng-include > div div.photo img {
     width: 100%; }
-  /* line 26, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  /* line 20, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
   ion-slide.photos ng-include > div div.photo div.meta {
     line-height: 1.2;
     display: block;
@@ -476,4 +470,19 @@ ion-slide.photos ng-include > div div.photo {
     background: #fff;
     color: black;
     padding: 4px 8px; }
+  /* line 29, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  ion-slide.photos ng-include > div div.photo div.share {
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    font-size: 2.5em;
+    color: #fff; }
+
+/* line 1, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+ion-slide.about ng-include > div {
+  background: #333;
+  padding: 30px; }
+  /* line 5, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+  ion-slide.about ng-include > div h1, ion-slide.about ng-include > div h2, ion-slide.about ng-include > div h3, ion-slide.about ng-include > div p {
+    color: #f0f0f0; }
 

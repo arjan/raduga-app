@@ -10,6 +10,7 @@
     "three.js": "~0.72.0",
     "ngtouch": "~1.0.1",
     "ngCordova": "~0.1.20-alpha",
-    "moment": "~2.10.6"
+    "moment": "~2.10.6",
+    "ng-material-floating-button": "ng-mfb#~0.6.2"
   }
 }

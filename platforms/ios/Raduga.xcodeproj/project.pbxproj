@@ -64,6 +64,9 @@
 		CF14461B085B42FE849DE7FE /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CE96499D2048D9B8D12B56 /* UIWebViewExtension.m */; };
 		CF5E81B13D014AF7B3E92AF8 /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 967CB521B8B54BC2BE002629 /* CDVJpegHeaderWriter.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		D67A451E1C0F9C100042DE99 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67A451C1C0F9C100042DE99 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
+		D67A451F1C0F9C100042DE99 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67A451D1C0F9C100042DE99 /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
+		D67A45211C0F9CAF0042DE99 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D67A45201C0F9CAF0042DE99 /* libc++.tbd */; };
 		D6AD97C61C0F4C620002F780 /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AD97C51C0F4C620002F780 /* FBMissingSymbols.m */; settings = {ASSET_TAGS = (); }; };
 		DBD085CE8D0F412DB4CA4A65 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F09804642C84C578F0A9A3C /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F80EA4243AF84182AAA648D4 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = E24A29E25A574FE3AAFBCDE8 /* CDVViewController+SplashScreen.m */; };
@@ -162,6 +165,9 @@
 		CE4C106E86C943E092178B2F /* AudioToolbox.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		D4DCE0B6F5734755B58C5282 /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
+		D67A451C1C0F9C100042DE99 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		D67A451D1C0F9C100042DE99 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D67A45201C0F9CAF0042DE99 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D69C1DBC1C0F44D9004193C7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-20151111/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		D69C1DC01C0F4A4C004193C7 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../../Downloads/parse-library-1.10.0/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		D69C1DC21C0F4BA4004193C7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -187,13 +193,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67A45211C0F9CAF0042DE99 /* libc++.tbd in Frameworks */,
 				5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */,
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				D67A451E1C0F9C100042DE99 /* Fabric.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				547614CEBE3F48D0881B25AA /* CoreLocation.framework in Frameworks */,
 				DBD085CE8D0F412DB4CA4A65 /* ImageIO.framework in Frameworks */,
 				4B1E3AF027B94C0A89654338 /* AVFoundation.framework in Frameworks */,
+				D67A451F1C0F9C100042DE99 /* Crashlytics.framework in Frameworks */,
 				15F21D7720EB4CC592699B0B /* Parse.framework in Frameworks */,
 				6E9DF3587E5C4231B993F665 /* AudioToolbox.framework in Frameworks */,
 				683B203C25C849A58968FFE7 /* CFNetwork.framework in Frameworks */,
@@ -233,6 +242,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D67A451C1C0F9C100042DE99 /* Fabric.framework */,
+				D67A451D1C0F9C100042DE99 /* Crashlytics.framework */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
 				EB87FDF21871DA7A0020F90C /* merges */,
@@ -272,6 +283,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D67A45201C0F9CAF0042DE99 /* libc++.tbd */,
 				D69C1DC21C0F4BA4004193C7 /* FBSDKCoreKit.framework */,
 				D69C1DC31C0F4BA4004193C7 /* FBSDKLoginKit.framework */,
 				D69C1DC41C0F4BA4004193C7 /* FBSDKShareKit.framework */,
@@ -403,6 +415,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				D67A451B1C0F9BDE0042DE99 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -526,6 +539,19 @@
 			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js";
 			showEnvVarsInLog = 0;
 		};
+		D67A451B1C0F9BDE0042DE99 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2ebbefb1b3e7c4ed81e6beaa751b9d3032fc7440 71d17aa368e3dc1b77325250d8b8e677b2646cb20d86a72eacc17d5ccaf93973";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -581,6 +607,7 @@
 					Raduga/Plugins/org.apache.cordova.core.parseplugin,
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)/frameworks",
+					"$(PROJECT_DIR)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -623,6 +650,7 @@
 					Raduga/Plugins/org.apache.cordova.core.parseplugin,
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)/frameworks",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Raduga/Raduga-Prefix.pch";

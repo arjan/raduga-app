@@ -26,6 +26,8 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import "MainViewController.h"
 
 #import <Cordova/CDVPlugin.h>
@@ -87,6 +89,8 @@
 
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
+    [Fabric with:@[[Crashlytics class]]];
 
     return YES;
 }
