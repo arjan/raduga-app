@@ -1,40 +1,41 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="10" android-versionName="1.0" id="nl.pinkponyexpress.raduga" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Raduga</name>
-  <description>
+    <name>Raduga</name>
+    <description>
         Raduga - Rainbow alerting and spotting
     </description>
-  <author email="arjan@miraclethings.nl" href="http://miraclethings.nl/">
+    <author email="arjan@miraclethings.nl" href="http://miraclethings.nl/">
         Arjan Scherpenisse
     </author>
-  <content src="index.html"/>
-  <access origin="*"/>
-  <allow-navigation href="*"/>
-  <preference name="Orientation" value="portrait"/>
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="android-minSdkVersion" value="16"/>
-  <preference name="BackupWebStorage" value="none"/>
-  <preference name="xwalkVersion" value="14+"/>
-  <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect"/>
-  <preference name="xwalkMode" value="embedded"/>
-  <feature name="StatusBar">
-    <param name="ios-package" onload="true" value="CDVStatusBar"/>
-  </feature>
-  <plugin name="cordova-plugin-device" spec="~1.0.1"/>
-  <plugin name="cordova-plugin-console" spec="~1.0.1"/>
-  <plugin name="cordova-plugin-whitelist" spec="~1.0.0"/>
-  <plugin name="cordova-plugin-splashscreen" spec="~2.1.0"/>
-  <plugin name="cordova-plugin-statusbar" spec="~1.0.1"/>
-  <plugin name="ionic-plugin-keyboard" spec="~1.0.7"/>
-  <plugin name="cordova-plugin-crosswalk-webview" spec="~1.3.1"/>
-  <plugin name="org.apache.cordova.core.parseplugin" spec="https://github.com/benjie/phonegap-parse-plugin">
-    <variable name="APP_ID" value="GgrCs3g29qpsqUdcO5hoieEtdtKzonD5p93bxn37"/>
-    <variable name="CLIENT_KEY" value="PFLpIMgyjC0TjjrBmtV1wY3tPVXKCqDnNUaBW4th"/>
-  </plugin>
-  <plugin name="cordova-plugin-geolocation" spec="~1.0.1"/>
-  <plugin name="cordova-plugin-camera" spec="~1.2.0"/>
-  <plugin name="cordova-instagram-plugin" spec="~0.5.2"/>
-  <plugin name="cordova-plugin-globalization" spec="~1.0.2"/>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="xwalkVersion" value="14+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <plugin name="cordova-plugin-device" spec="~1.0.1" />
+    <plugin name="cordova-plugin-console" spec="~1.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.0.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~2.1.0" />
+    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+    <plugin name="ionic-plugin-keyboard" spec="~1.0.7" />
+    <plugin name="cordova-plugin-crosswalk-webview" spec="~1.3.1" />
+    <plugin name="org.apache.cordova.core.parseplugin" spec="https://github.com/benjie/phonegap-parse-plugin">
+        <variable name="APP_ID" value="GgrCs3g29qpsqUdcO5hoieEtdtKzonD5p93bxn37" />
+        <variable name="CLIENT_KEY" value="PFLpIMgyjC0TjjrBmtV1wY3tPVXKCqDnNUaBW4th" />
+    </plugin>
+    <plugin name="cordova-plugin-geolocation" spec="~1.0.1" />
+    <plugin name="cordova-plugin-camera" spec="~1.2.0" />
+    <plugin name="cordova-instagram-plugin" spec="~0.5.2" />
+    <plugin name="cordova-plugin-globalization" spec="~1.0.2" />
+    <plugin name="cordova-plugin-file-transfer" spec="~1.3.0" />
 </widget>
