@@ -1,20 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
-        "id": "cordova-plugin-console.console",
-        "clobbers": [
-            "console"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-console/www/logger.js",
-        "id": "cordova-plugin-console.logger",
-        "clobbers": [
-            "cordova.logger"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
         "id": "cordova-plugin-statusbar.statusbar",
         "clobbers": [
@@ -125,6 +111,20 @@ module.exports = [
         "id": "cordova-plugin-x-socialsharing.SocialSharing",
         "clobbers": [
             "window.plugins.socialsharing"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
+        "id": "cordova-plugin-console.console",
+        "clobbers": [
+            "console"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-console/www/logger.js",
+        "id": "cordova-plugin-console.logger",
+        "clobbers": [
+            "cordova.logger"
         ]
     },
     {
@@ -279,7 +279,6 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.0.0",
     "cordova-plugin-crosswalk-webview": "1.3.1",
-    "cordova-plugin-console": "1.0.2",
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-device": "1.0.1",
     "cordova-plugin-geolocation": "1.0.1",
@@ -289,6 +288,7 @@ module.exports.metadata =
     "ionic-plugin-keyboard": "1.0.8",
     "org.apache.cordova.core.parseplugin": "0.1.0",
     "cordova-plugin-x-socialsharing": "5.0.7",
+    "cordova-plugin-console": "1.0.2",
     "cordova-plugin-file": "3.0.0"
 }
 // BOTTOM OF METADATA
