@@ -12,24 +12,36 @@ angular.module('app')
 
   })
 
-  .controller('PhotosCtrl', function PhotosCtrl($scope, $rootScope, $timeout, $ionicLoading, API, Config) {
+  .controller('PhotosCtrl', function PhotosCtrl($scope, $rootScope, $timeout, $ionicPopup, $ionicLoading, API, Config) {
 
     $scope.doRefresh = function() {
       $ionicLoading.show();
       API.getRainbowPhotos().then(function(p) {
-        $scope.photos = p.photos;
+        $scope.photos = _.filter(p.photos, function(p) { return !API.isBlacklisted(p.id); });
       }).finally(function() {
         $scope.$broadcast('scroll.refreshComplete');
         $ionicLoading.hide();
       });        
     };
 
-      $scope.doRefresh();
+    $scope.doRefresh();
 
-      $scope.share = function() {
-          console.log("share");
-          alert("share");
-      };
+    $scope.share = function(photo) {
+      console.log("share");
+      window.plugins.socialsharing.share(null, null, API.photoUrl(photo), null);
+    };
+
+    $scope.remove = function(p) {
+      $ionicPopup.confirm({
+        title: 'Remove image',
+        template: 'Are you sure you want to remove this image from your stream?'
+      }).then(function(res) {
+        if (res) {
+          API.removePhoto(p.id);
+          $scope.photos = _.filter($scope.photos, function(p) { return !API.isBlacklisted(p.id); });
+        }
+      });
+    };
 
     $scope.takePicture = function() {
 

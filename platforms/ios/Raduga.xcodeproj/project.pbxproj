@@ -70,6 +70,9 @@
 		D6AD97C61C0F4C620002F780 /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AD97C51C0F4C620002F780 /* FBMissingSymbols.m */; settings = {ASSET_TAGS = (); }; };
 		DBD085CE8D0F412DB4CA4A65 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F09804642C84C578F0A9A3C /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F80EA4243AF84182AAA648D4 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = E24A29E25A574FE3AAFBCDE8 /* CDVViewController+SplashScreen.m */; };
+		B9EF691AD943496F82237BA5 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = C012E333830F4EDEA997AFF7 /* SocialSharing.m */; };
+		98B18D7EBDA540A784E011E9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B41D526A9E4DD3AFB4C0E8 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D4027BF466104C91A9F731A9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6230CBA83EC74944885CAC1D /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +189,10 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Raduga/config.xml; sourceTree = "<group>"; };
 		F8B3A91F63B14A31A6F80E42 /* CDVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocation.m; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; };
 		FB2DCD0B5899402EBCE6C5B5 /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		C012E333830F4EDEA997AFF7 /* SocialSharing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SocialSharing.m"; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		7F6D48B44E4C432DBB21B4EA /* SocialSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		88B41D526A9E4DD3AFB4C0E8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		6230CBA83EC74944885CAC1D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +218,8 @@
 				4BF59B2970004B508AC38FA5 /* Security.framework in Frameworks */,
 				0C162088D60E4C1BA90D4E37 /* SystemConfiguration.framework in Frameworks */,
 				16872F07EB784CDBAEBB3A72 /* StoreKit.framework in Frameworks */,
+				98B18D7EBDA540A784E011E9 /* Social.framework in Frameworks */,
+				D4027BF466104C91A9F731A9 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +312,8 @@
 				C444EADF91BD405BB50BB9DD /* Security.framework */,
 				749B3048D7EC4F978273E027 /* SystemConfiguration.framework */,
 				8339D5BE7F9B42FEA9DDC243 /* StoreKit.framework */,
+				88B41D526A9E4DD3AFB4C0E8 /* Social.framework */,
+				6230CBA83EC74944885CAC1D /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +362,8 @@
 				23C0A4E523EF4834AEE0625C /* UIWebViewExtension.h */,
 				18388C1BD46B45DABD7F1EAC /* CDVParsePlugin.m */,
 				C879127AFAEB4F2CA8B5A4EC /* CDVParsePlugin.h */,
+				C012E333830F4EDEA997AFF7 /* SocialSharing.m */,
+				7F6D48B44E4C432DBB21B4EA /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = Raduga/Plugins;
@@ -579,6 +592,7 @@
 				7AC2FF25742747F5A3676CDE /* IonicKeyboard.m in Sources */,
 				CF14461B085B42FE849DE7FE /* UIWebViewExtension.m in Sources */,
 				780796CDA2D74DC6AFC169BA /* CDVParsePlugin.m in Sources */,
+				B9EF691AD943496F82237BA5 /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

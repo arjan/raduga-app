@@ -11,6 +11,7 @@
     "ngtouch": "~1.0.1",
     "ngCordova": "~0.1.20-alpha",
     "moment": "~2.10.6",
-    "ng-material-floating-button": "ng-mfb#~0.6.2"
+    "ng-material-floating-button": "ng-mfb#~0.6.2",
+    "ng-mfb": "~0.6.2"
   }
 }

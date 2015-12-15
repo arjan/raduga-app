@@ -1,6 +1,9 @@
 angular.module('app')
   .service('API', function API($http, Config) {
 
+    var photoBlacklist = (window.localStorage.photoBlacklist || "").split(/,/);
+    if (photoBlacklist[0] == "") photoBlacklist = [];
+
     var jsonGetter = function(path) {
       return function(args) {
         var qs = args ? "?" + $.param(args) : "";
@@ -19,7 +22,20 @@ angular.module('app')
       updateUser: function(userId, data) {
         return $http.post(Config.baseUrl + '/app/user/' + userId, data);
       },
-      getRainbowPhotos: jsonGetter('/app/photos')
+      getRainbowPhotos: jsonGetter('/app/photos'),
+
+      removePhoto: function(id) {
+        photoBlacklist.push(id);
+        window.localStorage.photoBlacklist = photoBlacklist.join(",");
+
+      },
+      isBlacklisted: function(id) {
+        return $.inArray(id, photoBlacklist) >= 0;
+      },
+      photoUrl: function(p, w) {
+        w = w || 400;
+        return Config.baseUrl + '/photos/' + p.variants[w+''];
+      }        
     };
   })
 
@@ -55,10 +71,9 @@ angular.module('app')
     };
   })
 
-  .filter('photoUrl', function(Config) {
+  .filter('photoUrl', function(API) {
     return function(p, w) {
-      w = w || 400;
-      return Config.baseUrl + '/photos/' + p.variants[w+''];
+      return API.photoUrl(p, w);
     };
   })
 

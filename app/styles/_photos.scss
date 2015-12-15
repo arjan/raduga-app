@@ -2,12 +2,15 @@
 
     li[mfb-button] {
         a {
-            background: blue;
+            background: red;
+            i { font-size: 30px;
+                line-height: 70px; }
+            width: 70px; height: 70px;
         }            
         position: absolute;
-        bottom: 40px;
+        bottom: 30px;
         right: 30px;
-        
+        list-style-type: none;
     }
 
     div.photo {
@@ -31,6 +34,10 @@
             bottom: 4px; right: 8px;
             font-size: 2.5em;
             color: #fff;
+            i {
+                padding: 10px;
+                text-shadow: 0 0 10px black;
+            }
         }            
     }
     
