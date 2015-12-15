@@ -40,24 +40,36 @@ angular.module('app')
 
   })
 
-  .controller('PhotosCtrl', function PhotosCtrl($scope, $rootScope, $timeout, $ionicLoading, API, Config) {
+  .controller('PhotosCtrl', function PhotosCtrl($scope, $rootScope, $timeout, $ionicPopup, $ionicLoading, API, Config) {
 
     $scope.doRefresh = function() {
       $ionicLoading.show();
       API.getRainbowPhotos().then(function(p) {
-        $scope.photos = p.photos;
+        $scope.photos = _.filter(p.photos, function(p) { return !API.isBlacklisted(p.id); });
       }).finally(function() {
         $scope.$broadcast('scroll.refreshComplete');
         $ionicLoading.hide();
       });        
     };
 
-      $scope.doRefresh();
+    $scope.doRefresh();
 
-      $scope.share = function() {
-          console.log("share");
-          alert("share");
-      };
+    $scope.share = function(photo) {
+      console.log("share");
+      window.plugins.socialsharing.share(null, null, API.photoUrl(photo), null);
+    };
+
+    $scope.remove = function(p) {
+      $ionicPopup.confirm({
+        title: 'Remove image',
+        template: 'Are you sure you want to remove this image from your stream?'
+      }).then(function(res) {
+        if (res) {
+          API.removePhoto(p.id);
+          $scope.photos = _.filter($scope.photos, function(p) { return !API.isBlacklisted(p.id); });
+        }
+      });
+    };
 
     $scope.takePicture = function() {
 
@@ -212,6 +224,9 @@ angular.module('app')
 angular.module('app')
   .service('API', function API($http, Config) {
 
+    var photoBlacklist = (window.localStorage.photoBlacklist || "").split(/,/);
+    if (photoBlacklist[0] == "") photoBlacklist = [];
+
     var jsonGetter = function(path) {
       return function(args) {
         var qs = args ? "?" + $.param(args) : "";
@@ -230,7 +245,20 @@ angular.module('app')
       updateUser: function(userId, data) {
         return $http.post(Config.baseUrl + '/app/user/' + userId, data);
       },
-      getRainbowPhotos: jsonGetter('/app/photos')
+      getRainbowPhotos: jsonGetter('/app/photos'),
+
+      removePhoto: function(id) {
+        photoBlacklist.push(id);
+        window.localStorage.photoBlacklist = photoBlacklist.join(",");
+
+      },
+      isBlacklisted: function(id) {
+        return $.inArray(id, photoBlacklist) >= 0;
+      },
+      photoUrl: function(p, w) {
+        w = w || 400;
+        return Config.baseUrl + '/photos/' + p.variants[w+''];
+      }        
     };
   })
 
@@ -241,8 +269,6 @@ angular.module('app')
       
       // get the position
       navigator.geolocation.getCurrentPosition(function(position) {
-
-        console.log('pos');
 
         API.getClosestCities({lat: position.coords.latitude, lon: position.coords.longitude, limit: 1}).then(
           function(r) {
@@ -268,22 +294,20 @@ angular.module('app')
     };
   })
 
-  .filter('photoUrl', function(Config) {
+  .filter('photoUrl', function(API) {
     return function(p, w) {
-      w = w || 400;
-      return Config.baseUrl + '/photos/' + p.variants[w+''];
+      return API.photoUrl(p, w);
     };
   })
 
   .filter('photoMeta', function(Config, Locale) {
     return function(p) {
-      var ts = moment(p.created).format('DD-MM-YYYY @ HH:mm');
+      var ts = moment(p.created).format('DD-MM-YYYY HH:mm');
       if (p.meta) {
         try {
-          console.log(p.meta);
           var meta = JSON.parse(p.meta);
           var k = 'name_' + Locale.language();
-          ts += ", " + meta[k];
+          ts += " " + meta[k];
         } catch (e) {
 
         };
@@ -348,9 +372,12 @@ angular.module('app')
         THREE.ImageUtils.crossOrigin = 'anonymous';
 
         $(elem).css('height', $(elem).width());
-        
+
         var width = $(elem).width();
         var height = $(elem).height();
+
+        var t = Math.floor(($(window).height() - $(elem).width())/3);
+        $(elem).css({marginTop: t + 'px'});
 
 	    // Earth params
 	    var radius   = 0.5,
