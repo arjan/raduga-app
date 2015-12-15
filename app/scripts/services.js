@@ -31,8 +31,6 @@ angular.module('app')
       // get the position
       navigator.geolocation.getCurrentPosition(function(position) {
 
-        console.log('pos');
-
         API.getClosestCities({lat: position.coords.latitude, lon: position.coords.longitude, limit: 1}).then(
           function(r) {
             if (r.cities.length > 0) {
@@ -66,13 +64,12 @@ angular.module('app')
 
   .filter('photoMeta', function(Config, Locale) {
     return function(p) {
-      var ts = moment(p.created).format('DD-MM-YYYY @ HH:mm');
+      var ts = moment(p.created).format('DD-MM-YYYY HH:mm');
       if (p.meta) {
         try {
-          console.log(p.meta);
           var meta = JSON.parse(p.meta);
           var k = 'name_' + Locale.language();
-          ts += ", " + meta[k];
+          ts += " " + meta[k];
         } catch (e) {
 
         };

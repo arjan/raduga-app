@@ -9,9 +9,12 @@ angular.module('app')
         THREE.ImageUtils.crossOrigin = 'anonymous';
 
         $(elem).css('height', $(elem).width());
-        
+
         var width = $(elem).width();
         var height = $(elem).height();
+
+        var t = Math.floor(($(window).height() - $(elem).width())/3);
+        $(elem).css({marginTop: t + 'px'});
 
 	    // Earth params
 	    var radius   = 0.5,
