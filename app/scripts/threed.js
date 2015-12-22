@@ -83,8 +83,8 @@ angular.module('app')
 		    new THREE.MeshPhongMaterial({
 		      map:         clouds,
 		      transparent: true,
-              specular: 0xffffff,
-              shininess: 10
+              specular: 0xcccccc,
+              shininess: 5
               
 		    })
 	      );		

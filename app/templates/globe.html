@@ -6,28 +6,14 @@
 
         <div class="cities">
             <div ng-show="cities.length > 0" class="cityitem">
-                <i class="icon ion-ios-rainy"></i>
-
                 <span>{{ 'rainbow_spotted_near'|i18n }}</span>
-
                 <span ng-repeat="c in cities">{{ c|cityName }}{{$last ? '' : ', '}}</span>
             </div>
 
             <div ng-show="!cities.length" class="cityitem">
-                <i class="icon ion-alert-circled"></i>
                 <span>{{ 'no_rainbow_alerts'|i18n }}</span>
             </div>
 
-            <div ng-show="closestCity" class="cityitem status">
-                <i class="icon ion-ios-location"></i>
-                <span>{{ 'you_are_near'|i18n }} {{ closestCity|cityName }}</span>
-            </div>
-
-            <div ng-show="!closestCity" class="cityitem status">
-                <i class="icon ion-ios-location"></i>
-                <span>{{ 'you_are_too_far'|i18n }}</span>
-            </div>
-            
         </div>
 
     </div>

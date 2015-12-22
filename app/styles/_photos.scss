@@ -1,11 +1,12 @@
 > div  {
-
+    $w: 55px;
+    
     li[mfb-button] {
         a {
-            background: red;
+            background: #00f900;
             i { font-size: 30px;
-                line-height: 70px; }
-            width: 70px; height: 70px;
+                line-height: $w; }
+            width: $w; height: $w;
         }            
         position: absolute;
         bottom: 30px;
@@ -35,7 +36,7 @@
             font-size: 2.5em;
             color: #fff;
             i {
-                padding: 10px;
+                padding: 10px 2px;
                 text-shadow: 0 0 10px black;
             }
         }            

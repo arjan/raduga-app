@@ -27,7 +27,6 @@ angular.module('app')
     $scope.doRefresh();
 
     $scope.share = function(photo) {
-      console.log("share");
       window.plugins.socialsharing.share(null, null, API.photoUrl(photo), null);
     };
 
@@ -103,6 +102,7 @@ angular.module('app')
         
         var bg1 = $(elem).find('.background.bg1');
         var bg2 = $(elem).find('.background.bg2');
+        console.log(bg1);
 
         function setGradient() {
           var H = moment().hour();
