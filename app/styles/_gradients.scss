@@ -1,7 +1,30 @@
 @mixin linear-gradient($color-stops...) {
-  background: nth(nth($color-stops, 1), 1);
-  background: -webkit-linear-gradient(left bottom, left top, $color-stops);
-  background: linear-gradient(to top, $color-stops);
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(left bottom, left top, $color-stops);
+    background: linear-gradient(to top, $color-stops);
+}
+
+.text-light {
+    color: #C5D1D4 !important;
+    h1,h2,h3,p {
+        color: #C5D1D4 !important;
+    }
+    div.container {
+        h1,h2,h3,p {
+            color: #C5D1D4 !important;
+        }
+    }
+}
+.text-dark {
+    color: #676771 !important;
+    h1,h2,h3,p {
+        color: #676771 !important;
+    }
+    div.container {
+        h1,h2,h3,p {
+            color: #676771 !important;
+        }
+    }
 }
 
 .t0000 {

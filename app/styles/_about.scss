@@ -6,11 +6,10 @@
 
     div.container {
         h1,h2,h3,p {
-            color: #f0f0f0;
+            color: inherit;
             margin-bottom: 0;
             font-size: 13px;
             line-height: 16px;
-            color: #333;
         }
         h1,h2,h3 { font-weight: bold; }
         

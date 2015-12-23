@@ -102,7 +102,7 @@ angular.module('app')
         
         var bg1 = $(elem).find('.background.bg1');
         var bg2 = $(elem).find('.background.bg2');
-        console.log(bg1);
+        console.log(elem);
 
         function setGradient() {
           var H = moment().hour();
@@ -117,6 +117,12 @@ angular.module('app')
 
           var d = 1 - (moment().minute() % 30) / 30;
           bg2.css('opacity', d);
+
+          var isDark = H >= 7 && H < 17;
+          elem.toggleClass('text-dark', isDark);
+          elem.toggleClass('text-light', !isDark);
+          console.log(elem);
+
         }
 
         setInterval(setGradient, 5000);

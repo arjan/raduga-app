@@ -13,7 +13,7 @@ angular.module('app')
         var width = $(elem).width();
         var height = $(elem).height();
 
-        var t = Math.floor(($(window).height() - $(elem).width())/3);
+        var t = Math.floor(($(window).height() - $(elem).width())/2);
         $(elem).css({marginTop: t + 'px'});
 
 	    // Earth params
@@ -24,7 +24,7 @@ angular.module('app')
 	    var scene = new THREE.Scene();
 
 	    var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 10000);
-	    camera.position.z = 1.5;
+	    camera.position.z = 1.6;
 
 	    var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 	    renderer.setSize(width, height);

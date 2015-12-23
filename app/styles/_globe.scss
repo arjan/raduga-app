@@ -1,14 +1,10 @@
 > div  {
     @include gradientbg;
 
-    padding-top: 10%;
-
     background: black;
     
     position: relative;
     
-    color: white;
-
     div.globe {
         z-index: 1;
         height: 100%;
@@ -19,13 +15,12 @@
         bottom: 45px;
         left: 0; right: 0;
         text-align: left;
-        text-shadow: 0 1px 1px rgba(0,0,0,1);
+        //text-shadow: 0 1px 1px rgba(0,0,0,1);
         //background: rgba(0,0,0,0.2);
 
         div.cityitem {
             padding: 0 10px;
             padding-bottom: 17px;
-            color: white;
             text-align: center;
             font-size: 17px;
 
@@ -34,10 +29,6 @@
                 margin-right: 10px;
                 font-size: 22px;
             }
-        }
-
-        div.status {
-            color: $highlight;
         }
     }
 

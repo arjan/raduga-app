@@ -9,11 +9,6 @@
                 <span>{{ 'rainbow_spotted_near'|i18n }}</span>
                 <span ng-repeat="c in cities">{{ c|cityName }}{{$last ? '' : ', '}}</span>
             </div>
-
-            <div ng-show="!cities.length" class="cityitem">
-                <span>{{ 'no_rainbow_alerts'|i18n }}</span>
-            </div>
-
         </div>
 
     </div>
