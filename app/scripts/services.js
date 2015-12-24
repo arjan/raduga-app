@@ -77,18 +77,37 @@ angular.module('app')
     };
   })
 
-  .filter('photoMeta', function(Config, Locale) {
+  .factory('PhotoMetaCity', function(Locale) {
     return function(p) {
-      var ts = moment(p.created).format('DD-MM-YYYY HH:mm');
+      var ts = '';
       if (p.meta) {
         try {
           var meta = JSON.parse(p.meta);
           var k = 'name_' + Locale.language();
-          ts += " " + meta[k];
+          if (k in meta) {
+            ts += " " + meta[k];
+          } else if (meta.geocode) {
+            for (var i=0; i<meta.geocode.address_components.length; i++) {
+              var a = meta.geocode.address_components[i];
+              if (a.types[0] == 'locality') {
+                ts += " " + a.long_name;
+                break;
+              }
+            }
+          } else if (meta.name_en) {
+            ts += " " + meta.name_en;
+          }
         } catch (e) {
-
         };
       }
+      return ts;
+    };
+  })
+
+  .filter('photoMeta', function(Config, Locale, PhotoMetaCity) {
+    return function(p) {
+      var ts = moment(p.created).format('DD-MM-YYYY HH:mm');
+      ts += PhotoMetaCity(p);
       return ts;
     };
   })
@@ -102,7 +121,6 @@ angular.module('app')
       init: function() {
       },
       language: function() {
-        return 'ru';
         return lang;
       }
     };

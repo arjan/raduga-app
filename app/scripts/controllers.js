@@ -1,14 +1,16 @@
 angular.module('app')
-  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale) {
+  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, PhotoMetaCity) {
 
     $scope.cities = [];
     API.getRainbowCities().then(function(l) {
       $scope.cities = l.cities;
       var city = '';
       try { city = JSON.parse(l.last_photo.meta).name_en; } catch (e) {}
+      console.log(l.last_photo.created);
+
       $scope.last_photo = {
-        city: city,
-        date: moment(l.last_photo.created).fromNow()
+        city: PhotoMetaCity(l.last_photo),
+        date: moment.utc(l.last_photo.created).fromNow()
       };
     });
 
