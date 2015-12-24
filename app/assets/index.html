@@ -21,7 +21,6 @@
     <body ng-app="app" class="cloak">
 
         <ion-content scroll="false">
-
             <ion-slide-box active-slide="1">
                 <ion-slide class="photos">
                     <ng-include src="'app/templates/photos.html'"></ng-include>
@@ -30,7 +29,7 @@
                     <ng-include src="'app/templates/globe.html'"></ng-include>
                 </ion-slide>
                 <ion-slide class="about">
-                    <ng-include src="'app/templates/about.html'"></ng-include>
+                    <ng-include src="'app/templates/about_' + lang + '.html'"></ng-include>
                 </ion-slide>
             </ion-slide-box>
             

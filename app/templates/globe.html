@@ -4,12 +4,22 @@
     <div class="container">
         <globe></globe>
 
+        <div class="last-photo">
+            <div ng-show="last_photo" class="cityitem">
+                <span>{{ 'rainbow_spotted_pre'|i18n }}</span>
+                <span>{{last_photo.date}}</span>
+                <span>{{ 'rainbow_spotted_near'|i18n }}</span>
+                <span>{{last_photo.city}}</span>
+            </div>
+        </div>
+        
         <div class="cities">
             <div ng-show="cities.length > 0" class="cityitem">
-                <span>{{ 'rainbow_spotted_near'|i18n }}</span>
+                <span>{{ 'rainbow_predicted_near'|i18n }}</span>
                 <span ng-repeat="c in cities">{{ c|cityName }}{{$last ? '' : ', '}}</span>
             </div>
         </div>
 
+        
     </div>
 </div>

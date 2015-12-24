@@ -4,31 +4,31 @@
     background: black;
     
     position: relative;
+
+    font-size: 15px;
+    text-align: center;
     
     div.globe {
         z-index: 1;
         height: 100%;
     }
 
+    div.last-photo {
+        position: absolute;
+        top: 0;
+        left: 0; right: 0;
+        padding: 20px 10px;
+    }
+    
     div.cities {
         position: absolute;
-        bottom: 45px;
+        bottom: 30px;
         left: 0; right: 0;
-        text-align: left;
         //text-shadow: 0 1px 1px rgba(0,0,0,1);
         //background: rgba(0,0,0,0.2);
 
         div.cityitem {
-            padding: 0 10px;
-            padding-bottom: 17px;
-            text-align: center;
-            font-size: 17px;
-
-            i {
-                //float: left;
-                margin-right: 10px;
-                font-size: 22px;
-            }
+            padding: 10px;
         }
     }
 
