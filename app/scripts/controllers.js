@@ -10,7 +10,7 @@ angular.module('app')
 
       $scope.last_photo = {
         city: PhotoMetaCity(l.last_photo),
-        date: moment.utc(l.last_photo.created).fromNow()
+        date: moment.utc(l.last_photo.created).format('DD-MM-YYYY HH:mm')
       };
     });
 

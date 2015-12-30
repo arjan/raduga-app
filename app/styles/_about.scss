@@ -1,7 +1,9 @@
 > div  {
+
+    @include gradientbg;
+    
     div.scroll {
         height: 100%;
-        @include gradientbg;
     }
 
     div.container {
@@ -13,6 +15,6 @@
         }
         h1,h2,h3 { font-weight: bold; }
         
-        padding: 10px;
+        padding: 20px 10px;
     }
 }
