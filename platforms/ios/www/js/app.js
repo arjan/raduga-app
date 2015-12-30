@@ -1,15 +1,13 @@
 angular.module('app', ['ionic', 'ng-mfb', 'ngCordova', 'ngTouch', 'templates'])
 
-  .run(function(Locale, PushService) {
+  .run(function(Locale, PushService, $rootScope) {
 
-      console.log("Hello");
-      
+    Locale.init();
+    moment.locale(Locale.language());
+    $rootScope.lang = Locale.language();
+    
     ionic.Platform.ready(function(){
       $("body").removeClass("cloak");
-        console.log("bla");
-        
-      Locale.init();
-
       PushService.init();
     });    
   })
@@ -27,13 +25,26 @@ angular.module('app')
 ;
 
 angular.module('app')
-  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale) {
+
+  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, $rootScope, PhotoMetaCity) {
 
     $scope.cities = [];
-    API.getRainbowCities().then(function(l) {
-      $scope.cities = l.cities;
-    });
+    function refresh() {
+      API.getRainbowCities().then(function(l) {
+        $scope.cities = l.cities;
+        var city = '';
+        try { city = JSON.parse(l.last_photo.meta).name_en; } catch (e) {}
 
+        $scope.last_photo = {
+          city: PhotoMetaCity(l.last_photo),
+          date: moment(l.last_photo.created).fromNow()
+        };
+      });
+    }
+    refresh();
+
+    $rootScope.$on('refresh', refresh);
+    
     $scope.$on('tracking', function(_sender, down) {
       $ionicSlideBoxDelegate.enableSlide(!down);
     });
@@ -50,12 +61,12 @@ angular.module('app')
         $scope.$broadcast('scroll.refreshComplete');
         $ionicLoading.hide();
       });        
+      $rootScope.$broadcast('refresh');
     };
 
     $scope.doRefresh();
 
     $scope.share = function(photo) {
-      console.log("share");
       window.plugins.socialsharing.share(null, null, API.photoUrl(photo), null);
     };
 
@@ -74,50 +85,59 @@ angular.module('app')
     $scope.takePicture = function() {
 
       $ionicLoading.show();
-      
-      navigator.camera.getPicture(
-        function ok(fileURL) {
-          console.log('Got picture: ' + fileURL);
 
-          var options = new FileUploadOptions();
-          options.fileKey = "file";
-          options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
-          options.mimeType = "text/plain";
-          var c = {"name_en": "Amsterdam"};
-          options.params = {meta: JSON.stringify($rootScope.closestCity ? $rootScope.closestCity : {})};
-          options.params = {meta: JSON.stringify(c)}; // DEBUG
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          
+          navigator.camera.getPicture(
+            function ok(fileURL) {
+              console.log('Got picture: ' + fileURL);
 
-          var ft = new FileTransfer();
-          var url = Config.baseUrl + '/app/user/' + Config.userId + '/photo';
-          ft.upload(fileURL, url,
-                    function (r) {
-                      console.log("Code = " + r.responseCode);
-                      console.log("Response = " + r.response);
-                      console.log("Sent = " + r.bytesSent);
-                      $scope.$apply(function() {
-                        $scope.doRefresh();
-                      });
-                    }, 
-                    function (error) {
-                      alert("An error has occurred: Code = " + error.code);
-                      console.log("upload error source " + error.source);
-                      console.log("upload error target " + error.target);
-                      $scope.$apply(function() {$ionicLoading.hide();});            
-                    },
-                    options);
+              var options = new FileUploadOptions();
+              options.fileKey = "file";
+              options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+              options.mimeType = "text/plain";
+
+              var meta = $rootScope.closestCity ? $.extend({}, $rootScope.closestCity) : {};
+              meta.lat = position.coords.latitude;
+              meta.lng = position.coords.longitude;
+              options.params = {meta: JSON.stringify(meta)};
+
+              var ft = new FileTransfer();
+              var url = Config.baseUrl + '/app/user/' + Config.userId + '/photo';
+              ft.upload(fileURL, url,
+                        function (r) {
+                          console.log("Code = " + r.responseCode);
+                          console.log("Response = " + r.response);
+                          console.log("Sent = " + r.bytesSent);
+                          $scope.$apply(function() {
+                            $scope.doRefresh();
+                          });
+                        }, 
+                        function (error) {
+                          alert("An error has occurred: Code = " + error.code);
+                          console.log("upload error source " + error.source);
+                          console.log("upload error target " + error.target);
+                          $scope.$apply(function() {$ionicLoading.hide();});            
+                        },
+                        options);
+            },
+            
+            function fail() {
+              console.log('error getting picture');
+              $scope.$apply(function() {$ionicLoading.hide();});            
+            },
+            {
+              qualtiy: 85,
+              destinationType: 1, // file URL
+              allowEdit: false,
+              targetWidth: 1200,
+              targetHeight: 1200,
+              correctOrientation: true
+            });
         },
-        
-        function fail() {
-          console.log('error getting picture');
-          $scope.$apply(function() {$ionicLoading.hide();});            
-        },
-        {
-          qualtiy: 85,
-          destinationType: 1, // file URL
-          allowEdit: false,
-          targetWidth: 1200,
-          targetHeight: 1200,
-          correctOrientation: true
+        function onError() {
+          alert("Cannot retrieve current geographical location");
         });
     };
     
@@ -131,7 +151,7 @@ angular.module('app')
         
         var bg1 = $(elem).find('.background.bg1');
         var bg2 = $(elem).find('.background.bg2');
-
+        
         function setGradient() {
           var H = moment().hour();
           var base = Math.ceil((H/24) * 3);
@@ -145,6 +165,10 @@ angular.module('app')
 
           var d = 1 - (moment().minute() % 30) / 30;
           bg2.css('opacity', d);
+
+          var isDark = H >= 7 && H < 17;
+          elem.toggleClass('text-dark', isDark);
+          elem.toggleClass('text-light', !isDark);
         }
 
         setInterval(setGradient, 5000);
@@ -300,18 +324,37 @@ angular.module('app')
     };
   })
 
-  .filter('photoMeta', function(Config, Locale) {
+  .factory('PhotoMetaCity', function(Locale) {
     return function(p) {
-      var ts = moment(p.created).format('DD-MM-YYYY HH:mm');
+      var ts = '';
       if (p.meta) {
         try {
           var meta = JSON.parse(p.meta);
           var k = 'name_' + Locale.language();
-          ts += " " + meta[k];
+          if (k in meta) {
+            ts += " " + meta[k];
+          } else if (meta.geocode) {
+            for (var i=0; i<meta.geocode.address_components.length; i++) {
+              var a = meta.geocode.address_components[i];
+              if (a.types[0] == 'locality') {
+                ts += " " + a.long_name;
+                break;
+              }
+            }
+          } else if (meta.name_en) {
+            ts += " " + meta.name_en;
+          }
         } catch (e) {
-
         };
       }
+      return ts;
+    };
+  })
+
+  .filter('photoMeta', function(Config, Locale, PhotoMetaCity) {
+    return function(p) {
+      var ts = moment(p.created).format('DD-MM-YYYY HH:mm');
+      ts += PhotoMetaCity(p);
       return ts;
     };
   })
@@ -333,13 +376,17 @@ angular.module('app')
   .filter('i18n', function(Locale) {
     var strings = {
       en: {
-        'rainbow_spotted_near': 'Rainbows spotted near:',
+        'rainbow_spotted_pre': 'Last rainbow spotted ',
+        'rainbow_spotted_near': 'near',
+        'rainbow_predicted_near': 'Rainbows predicted near:',
         'no_rainbow_alerts': 'No rainbow alerts at the moment.',
         'you_are_near': 'You are near:',
         'you_are_too_far': 'You are too far from a Russian city to receive rainbow notifications.'
       },
       ru: {
-        'rainbow_spotted_near': 'Радуги замечен рядом:',
+        'rainbow_spotted_pre': 'Радуги замечен рядом ',
+        'rainbow_spotted_near': 'возле',
+        'rainbow_predicted_near': 'Радуги предсказал рядом:',
         'no_rainbow_alerts': 'Нет радуги оповещения на данный момент.',
         'you_are_near': 'Вы рядом с:',
         'you_are_too_far': 'Вы находитесь слишком далеко от города, чтобы получать уведомления радуги.'
@@ -376,7 +423,7 @@ angular.module('app')
         var width = $(elem).width();
         var height = $(elem).height();
 
-        var t = Math.floor(($(window).height() - $(elem).width())/3);
+        var t = Math.floor(($(window).height() - $(elem).width())/2);
         $(elem).css({marginTop: t + 'px'});
 
 	    // Earth params
@@ -387,7 +434,7 @@ angular.module('app')
 	    var scene = new THREE.Scene();
 
 	    var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 10000);
-	    camera.position.z = 1.5;
+	    camera.position.z = 1.6;
 
 	    var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 	    renderer.setSize(width, height);
@@ -446,8 +493,8 @@ angular.module('app')
 		    new THREE.MeshPhongMaterial({
 		      map:         clouds,
 		      transparent: true,
-              specular: 0xffffff,
-              shininess: 10
+              specular: 0xcccccc,
+              shininess: 5
               
 		    })
 	      );		

@@ -1,19 +1,24 @@
 angular.module('app')
-  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, PhotoMetaCity) {
+
+  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, $rootScope, PhotoMetaCity) {
 
     $scope.cities = [];
-    API.getRainbowCities().then(function(l) {
-      $scope.cities = l.cities;
-      var city = '';
-      try { city = JSON.parse(l.last_photo.meta).name_en; } catch (e) {}
-      console.log(l.last_photo.created);
+    function refresh() {
+      API.getRainbowCities().then(function(l) {
+        $scope.cities = l.cities;
+        var city = '';
+        try { city = JSON.parse(l.last_photo.meta).name_en; } catch (e) {}
 
-      $scope.last_photo = {
-        city: PhotoMetaCity(l.last_photo),
-        date: moment.utc(l.last_photo.created).format('DD-MM-YYYY HH:mm')
-      };
-    });
+        $scope.last_photo = {
+          city: PhotoMetaCity(l.last_photo),
+          date: moment.utc(l.last_photo.created).format('DD-MM-YYYY HH:mm')
+        };
+      });
+    }
+    refresh();
 
+    $rootScope.$on('refresh', refresh);
+    
     $scope.$on('tracking', function(_sender, down) {
       $ionicSlideBoxDelegate.enableSlide(!down);
     });
@@ -30,6 +35,7 @@ angular.module('app')
         $scope.$broadcast('scroll.refreshComplete');
         $ionicLoading.hide();
       });        
+      $rootScope.$broadcast('refresh');
     };
 
     $scope.doRefresh();
