@@ -10,3 +10,5 @@ plugins/
 /bower_components/
 /www/
 /app/scripts/config.js
+/android-release/
+/build.json
