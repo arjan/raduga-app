@@ -37,7 +37,7 @@ angular.module('app')
 
         $scope.last_photo = {
           city: PhotoMetaCity(l.last_photo),
-          date: moment(l.last_photo.created).fromNow()
+          date: moment(l.last_photo.created).format('DD-MM-YYYY HH:mm')
         };
       });
     }
@@ -368,6 +368,7 @@ angular.module('app')
       init: function() {
       },
       language: function() {
+        //return 'ru';
         return lang;
       }
     };
@@ -376,17 +377,18 @@ angular.module('app')
   .filter('i18n', function(Locale) {
     var strings = {
       en: {
-        'rainbow_spotted_pre': 'Last rainbow spotted ',
-        'rainbow_spotted_near': 'near',
-        'rainbow_predicted_near': 'Rainbows predicted near:',
+        'rainbow_spotted_pre': 'Last spotted rainbow:',
+        'rainbow_spotted_near': ' ',
+        'rainbow_predicted_near': 'Rainbows predicted near',
         'no_rainbow_alerts': 'No rainbow alerts at the moment.',
         'you_are_near': 'You are near:',
         'you_are_too_far': 'You are too far from a Russian city to receive rainbow notifications.'
       },
       ru: {
-        'rainbow_spotted_pre': 'Радуги замечен рядом ',
-        'rainbow_spotted_near': 'возле',
-        'rainbow_predicted_near': 'Радуги предсказал рядом:',
+        'rainbow_spotted_pre': 'Последняя обнаруженная радуга:',
+        'rainbow_spotted_near': 'в',
+
+        'rainbow_predicted_near': 'Радуги предсказаны вблизи',
         'no_rainbow_alerts': 'Нет радуги оповещения на данный момент.',
         'you_are_near': 'Вы рядом с:',
         'you_are_too_far': 'Вы находитесь слишком далеко от города, чтобы получать уведомления радуги.'

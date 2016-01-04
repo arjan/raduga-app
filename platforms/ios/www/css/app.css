@@ -505,27 +505,28 @@ ion-slide.photos ng-include > div div.photo {
       padding: 10px 2px;
       text-shadow: 0 0 10px black; }
 
-/* line 2, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+/* line 17, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+ion-slide.about ng-include > div > .background, ion-slide.about ng-include > div > .container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+/* line 5, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
 ion-slide.about ng-include > div div.scroll {
   height: 100%; }
-  /* line 17, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
-  ion-slide.about ng-include > div div.scroll > .background, ion-slide.about ng-include > div div.scroll > .container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0; }
 
-/* line 7, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+/* line 9, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
 ion-slide.about ng-include > div div.container {
-  padding: 10px; }
-  /* line 8, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+  padding: 20px 10px; }
+  /* line 10, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
   ion-slide.about ng-include > div div.container h1, ion-slide.about ng-include > div div.container h2, ion-slide.about ng-include > div div.container h3, ion-slide.about ng-include > div div.container p {
     color: inherit;
     margin-bottom: 0;
     font-size: 13px;
     line-height: 16px; }
-  /* line 14, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+  /* line 16, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
   ion-slide.about ng-include > div div.container h1, ion-slide.about ng-include > div div.container h2, ion-slide.about ng-include > div div.container h3 {
     font-weight: bold; }
 
