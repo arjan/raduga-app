@@ -111,7 +111,7 @@ angular.module('app')
             });
         },
         function onError() {
-          alert("Cannot retrieve current geographical location");
+          alert("Cannot retrieve current location - are your location settings enabled?");
         });
     };
     
