@@ -46,6 +46,7 @@ angular.module('app')
 
 	    var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 	    renderer.setSize(width, height);
+        renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
 
         window.r = renderer;
         
