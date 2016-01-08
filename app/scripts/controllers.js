@@ -111,7 +111,8 @@ angular.module('app')
             });
         },
         function onError() {
-          alert("Cannot retrieve current location - are your location settings enabled?");
+          $ionicLoading.hide();
+          $ionicPopup.alert({title: "GPS issue", template: "Cannot access you current GPS position - please check that your location settings enabled."});
         },
         {
           timeout: 5000, enableHighAccuracy: true
