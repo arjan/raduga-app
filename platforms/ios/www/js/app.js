@@ -137,7 +137,7 @@ angular.module('app')
             });
         },
         function onError() {
-          alert("Cannot retrieve current geographical location");
+          alert("Cannot retrieve current location - are your location settings enabled?");
         });
     };
     
@@ -412,21 +412,39 @@ angular.module('app')
 
 angular.module('app')
   .directive('globe', function globe(API) {
+
+    function fallback($elem, scope) {
+      $elem.toggleClass('fallback', true);
+      $elem.append("<div class='earth'>");
+      var clouds = $("<div class='clouds'>").appendTo($elem);
+      function refresh () {
+        clouds.css({background: 'url(' + API.getCloudsURL() + ')'});
+      }
+
+      refresh();
+      scope.$on('refresh', refresh);
+    }
+    
     return {
       restrict: 'E',
       template: '<div class="globe"></div>',
       replace: true,
       link: function(scope, elem) {
 
-        THREE.ImageUtils.crossOrigin = 'anonymous';
-
         $(elem).css('height', $(elem).width());
-
-        var width = $(elem).width();
-        var height = $(elem).height();
 
         var t = Math.floor(($(window).height() - $(elem).width())/2);
         $(elem).css({marginTop: t + 'px'});
+        
+        var width = $(elem).width();
+        var height = $(elem).height();
+        
+        if (!Detector.webgl) {
+          fallback($(elem), scope);
+          return;
+        }
+
+        THREE.ImageUtils.crossOrigin = 'anonymous';
 
 	    // Earth params
 	    var radius   = 0.5,

@@ -412,16 +412,16 @@ body {
   body.cloak {
     background: black; }
 
-/* line 23, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 28, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
 div.slider {
   height: 100%; }
 
-/* line 26, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 31, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
 div.slider-pager {
   bottom: 0;
   padding: 15px 0 30px 0; }
 
-/* line 33, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 38, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
 ion-slide > ng-include > div {
   height: 100%; }
 
@@ -458,6 +458,21 @@ ion-slide.globe ng-include > div {
     /* line 30, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
     ion-slide.globe ng-include > div div.cities div.cityitem {
       padding: 10px; }
+  /* line 35, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+  ion-slide.globe ng-include > div div.globe.fallback {
+    position: relative; }
+    /* line 37, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+    ion-slide.globe ng-include > div div.globe.fallback div {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: 20px;
+      border-radius: 50%; }
+    /* line 42, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+    ion-slide.globe ng-include > div div.globe.fallback div.earth {
+      background: url(../images/earth.jpg); }
 
 /* line 4, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
 ion-slide.photos ng-include > div li[mfb-button] {
