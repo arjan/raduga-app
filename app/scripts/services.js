@@ -35,7 +35,10 @@ angular.module('app')
       photoUrl: function(p, w) {
         w = w || 400;
         return Config.baseUrl + '/photos/' + p.variants[w+''];
-      }        
+      },
+      flagPhoto: function(photoId, reason) {
+        return $http.post(Config.baseUrl + '/app/report/' + photoId, {reason: reason});
+      }
     };
   })
 
