@@ -164,10 +164,10 @@ angular.module('app')
           var base = moment(now).add(-(now.minute() % 30), 'minute');
 
           bg1.attr('class', 'background bg1 t' + base.format("HHmm"));
-          bg2.attr('class', 'background bg2 t' + base.add(30, 'minute').format("HHmm"));
+          // bg2.attr('class', 'background bg2 t' + base.add(30, 'minute').format("HHmm"));
 
-          var d = 1 - (moment().minute() % 30) / 30;
-          bg2.css('opacity', d);
+          // var d = (moment().minute() % 30) / 30;
+          // bg2.css('opacity', d);
 
           var isDark = H >= 7 && H < 17;
           elem.toggleClass('text-dark', isDark);
