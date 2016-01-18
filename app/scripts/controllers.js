@@ -139,7 +139,7 @@ angular.module('app')
           $ionicPopup.alert({title: "GPS issue", template: "Cannot access you current GPS position - please check that your location settings enabled."});
         },
         {
-          timeout: 5000, enableHighAccuracy: true
+          timeout: 5000
         }
       );
     };

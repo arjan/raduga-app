@@ -51,3 +51,9 @@ ion-slide {
         @import "about";
     }
 }
+
+body.platform-ios {
+    div.about div.container, div.globe div.container {
+        margin-top: 15px;
+    }
+}

@@ -36,7 +36,7 @@ angular.module('app')
 
 	    // Earth params
 	    var radius   = 0.5,
-		    segments = 32,
+		    segments = 48,
 		    rotation = 6;  
 
 	    var scene = new THREE.Scene();
@@ -45,14 +45,14 @@ angular.module('app')
 	    camera.position.z = 1.6;
 
 	    var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-	    renderer.setSize(width, height);
-        renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
+            var r = window.devicePixelRatio;
+	    renderer.setSize(r*width, r*height);
+            renderer.domElement.style.width = width + 'px';
+            renderer.domElement.style.height = height + 'px';
 
-        window.r = renderer;
-        
 	    scene.add(new THREE.AmbientLight(0x222222));
 
-        var sphere = createSphere(radius, segments);
+            var sphere = createSphere(radius, segments);
 	    sphere.rotation.y = rotation; 
 	    scene.add(sphere);
 

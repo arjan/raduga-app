@@ -73,6 +73,8 @@
 		DBD085CE8D0F412DB4CA4A65 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F09804642C84C578F0A9A3C /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E0D02B13FCD8424694C9C2AC /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F8CEE41727466C9D45054F /* CDVLogger.m */; };
 		F80EA4243AF84182AAA648D4 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = E24A29E25A574FE3AAFBCDE8 /* CDVViewController+SplashScreen.m */; };
+		EA1CEB14601C46A0AFA13ED0 /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3852C3A96F46429BA5414F /* CDVConnection.m */; };
+		4C3467FB10E54D00B75034AB /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E8982400110E4EC0A1E85180 /* CDVReachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +195,10 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Raduga/config.xml; sourceTree = "<group>"; };
 		F8B3A91F63B14A31A6F80E42 /* CDVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocation.m; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; };
 		FB2DCD0B5899402EBCE6C5B5 /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		1D3852C3A96F46429BA5414F /* CDVConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVConnection.m"; path = "cordova-plugin-network-information/CDVConnection.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		E8982400110E4EC0A1E85180 /* CDVReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVReachability.m"; path = "cordova-plugin-network-information/CDVReachability.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		AA5FC81F13CA409DB3A1D418 /* CDVConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVConnection.h"; path = "cordova-plugin-network-information/CDVConnection.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9F772603C5844D92A9699657 /* CDVReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVReachability.h"; path = "cordova-plugin-network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +370,10 @@
 				7F6D48B44E4C432DBB21B4EA /* SocialSharing.h */,
 				32F8CEE41727466C9D45054F /* CDVLogger.m */,
 				3D7D1174345340BE8A753CD0 /* CDVLogger.h */,
+				1D3852C3A96F46429BA5414F /* CDVConnection.m */,
+				E8982400110E4EC0A1E85180 /* CDVReachability.m */,
+				AA5FC81F13CA409DB3A1D418 /* CDVConnection.h */,
+				9F772603C5844D92A9699657 /* CDVReachability.h */,
 			);
 			name = Plugins;
 			path = Raduga/Plugins;
@@ -593,6 +603,8 @@
 				780796CDA2D74DC6AFC169BA /* CDVParsePlugin.m in Sources */,
 				B9EF691AD943496F82237BA5 /* SocialSharing.m in Sources */,
 				E0D02B13FCD8424694C9C2AC /* CDVLogger.m in Sources */,
+				EA1CEB14601C46A0AFA13ED0 /* CDVConnection.m in Sources */,
+				4C3467FB10E54D00B75034AB /* CDVReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +625,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -621,6 +634,7 @@
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)/frameworks",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -628,6 +642,12 @@
 				GCC_PREFIX_HEADER = "Raduga/Raduga-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+					"\"$(SRC_ROOT)/Headers\"",
+				);
 				INFOPLIST_FILE = "Raduga/Raduga-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
@@ -644,7 +664,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nl.pinkponyexpress.raduga;
 				PRODUCT_NAME = Raduga;
-				PROVISIONING_PROFILE = "14b828bb-ae22-4e23-8ee3-85d446db781b";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -654,7 +674,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Stichting Pink Pony Express (3HF2SK5VEN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -663,6 +684,7 @@
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)/frameworks",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Raduga/Raduga-Prefix.pch";
@@ -684,7 +706,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nl.pinkponyexpress.raduga;
 				PRODUCT_NAME = Raduga;
-				PROVISIONING_PROFILE = "14b828bb-ae22-4e23-8ee3-85d446db781b";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

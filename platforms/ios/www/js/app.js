@@ -1,16 +1,16 @@
 angular.module('app', ['ionic', 'ng-mfb', 'ngCordova', 'ngTouch', 'templates'])
 
-  .run(function(Locale, PushService, $rootScope) {
+    .run(function(Locale, PushService, $rootScope) {
 
-    Locale.init();
-    moment.locale(Locale.language());
-    $rootScope.lang = Locale.language();
-    
-    ionic.Platform.ready(function(){
-      $("body").removeClass("cloak");
-      PushService.init();
-    });    
-  })
+        Locale.init();
+        moment.locale(Locale.language());
+        $rootScope.lang = Locale.language();
+        
+        ionic.Platform.ready(function(){
+            $("body").removeClass("cloak");
+            PushService.init();
+        });    
+    })
 ;
 
 angular.module('app')
@@ -51,7 +51,7 @@ angular.module('app')
 
   })
 
-  .controller('PhotosCtrl', function PhotosCtrl($scope, $rootScope, $timeout, $ionicPopup, $ionicLoading, API, Config) {
+  .controller('PhotosCtrl', function PhotosCtrl($scope, $rootScope, $timeout, $ionicPopup, $ionicLoading, $ionicActionSheet, API, Config) {
 
     $scope.doRefresh = function() {
       $ionicLoading.show();
@@ -70,14 +70,38 @@ angular.module('app')
       window.plugins.socialsharing.share(null, null, API.photoUrl(photo), null);
     };
 
+    function remove(photo) {
+      API.removePhoto(photo.id);
+      $scope.photos = _.filter($scope.photos, function(photo) { return !API.isBlacklisted(photo.id); });
+    }
+    
     $scope.remove = function(p) {
       $ionicPopup.confirm({
         title: 'Remove image',
         template: 'Are you sure you want to remove this image from your stream?'
       }).then(function(res) {
-        if (res) {
-          API.removePhoto(p.id);
-          $scope.photos = _.filter($scope.photos, function(p) { return !API.isBlacklisted(p.id); });
+        if (res) remove(p);
+      });
+    };
+
+    $scope.flag = function(p) {
+      var buttons = [{text: 'Graphic content'}, {text: 'Copyright violation'}, {text: 'Not relevant to this app'}];
+      $ionicActionSheet.show({
+        buttons: buttons,
+        titleText: 'Flag photo because:',
+        cancelText: 'Cancel',
+        buttonClicked: function(index) {
+          $ionicLoading.show();
+          API.flagPhoto(p.id, buttons[index].text).then(function(r) {
+            $ionicLoading.hide();
+            console.log('ja', r);
+            remove(p);
+            $ionicPopup.alert({
+              title: 'Thanks',
+              template: 'The photo has been reported and removed from your stream.'
+            });
+          });
+          return true;
         }
       });
     };
@@ -115,7 +139,7 @@ angular.module('app')
                           });
                         }, 
                         function (error) {
-                          alert("An error has occurred: Code = " + error.code);
+                          $ionicPopup.alert({title: "Error", template: "An error has occurred: Code = " + error.code});
                           console.log("upload error source " + error.source);
                           console.log("upload error target " + error.target);
                           $scope.$apply(function() {$ionicLoading.hide();});            
@@ -137,8 +161,13 @@ angular.module('app')
             });
         },
         function onError() {
-          alert("Cannot retrieve current location - are your location settings enabled?");
-        });
+          $ionicLoading.hide();
+          $ionicPopup.alert({title: "GPS issue", template: "Cannot access you current GPS position - please check that your location settings enabled."});
+        },
+        {
+          timeout: 5000
+        }
+      );
     };
     
   })
@@ -212,6 +241,9 @@ angular.module('app')
               if (typeof subscriptions == 'string') {
                 subscriptions = subscriptions.substr(1,subscriptions.length-2).split(", ");
               }
+              if (subscriptions === null) {
+                subscriptions = [];
+              }
 
               console.log("Subscriptions: " + JSON.stringify(subscriptions));
 
@@ -282,7 +314,10 @@ angular.module('app')
       photoUrl: function(p, w) {
         w = w || 400;
         return Config.baseUrl + '/photos/' + p.variants[w+''];
-      }        
+      },
+      flagPhoto: function(photoId, reason) {
+        return $http.post(Config.baseUrl + '/app/report/' + photoId, {reason: reason});
+      }
     };
   })
 
@@ -448,7 +483,7 @@ angular.module('app')
 
 	    // Earth params
 	    var radius   = 0.5,
-		    segments = 32,
+		    segments = 48,
 		    rotation = 6;  
 
 	    var scene = new THREE.Scene();
@@ -457,13 +492,14 @@ angular.module('app')
 	    camera.position.z = 1.6;
 
 	    var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-	    renderer.setSize(width, height);
+            var r = window.devicePixelRatio;
+	    renderer.setSize(r*width, r*height);
+            renderer.domElement.style.width = width + 'px';
+            renderer.domElement.style.height = height + 'px';
 
-        window.r = renderer;
-        
 	    scene.add(new THREE.AmbientLight(0x222222));
 
-        var sphere = createSphere(radius, segments);
+            var sphere = createSphere(radius, segments);
 	    sphere.rotation.y = rotation; 
 	    scene.add(sphere);
 

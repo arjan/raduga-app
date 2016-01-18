@@ -545,3 +545,7 @@ ion-slide.about ng-include > div div.container {
   ion-slide.about ng-include > div div.container h1, ion-slide.about ng-include > div div.container h2, ion-slide.about ng-include > div div.container h3 {
     font-weight: bold; }
 
+/* line 56, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+body.platform-ios div.about div.container, body.platform-ios div.globe div.container {
+  margin-top: 15px; }
+

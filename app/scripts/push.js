@@ -24,10 +24,14 @@ angular.module('app')
             if (Config.debug) {
               parsePlugin.subscribe('debug', function() {});
             }
+            parsePlugin.subscribe('everybody', function() {});
             
             parsePlugin.getSubscriptions(function(subscriptions) {
               if (typeof subscriptions == 'string') {
                 subscriptions = subscriptions.substr(1,subscriptions.length-2).split(", ");
+              }
+              if (subscriptions === null) {
+                subscriptions = [];
               }
 
               console.log("Subscriptions: " + JSON.stringify(subscriptions));
