@@ -2,7 +2,11 @@
     <div class="background bg1"></div>
     <div class="background bg2"></div>
     <div class="container">
-        <globe></globe>
+        <div ng-show="online">
+            <globe></globe>
+        </div>
+
+        <div class="center" ng-show="!online">{{ 'cannot_use'|i18n }}</div>
 
         <div class="last-photo">
             <div ng-show="last_photo" class="cityitem">

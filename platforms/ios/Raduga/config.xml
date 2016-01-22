@@ -58,6 +58,9 @@
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
     </feature>
+    <feature name="NativeSettings">
+        <param name="ios-package" value="NativeSettings" />
+    </feature>
     <icon height="180" src="res/ios/appicon-60@3x.png" width="180" />
     <icon height="60" src="res/ios/appicon-60.png" width="60" />
     <icon height="120" src="res/ios/appicon-60@2x.png" width="120" />

@@ -19,6 +19,15 @@
         left: 0; right: 0;
         padding: 20px 10px;
     }
+
+    div.center {
+        position: absolute;
+        top: 160px;
+        text-align: center;
+        width: 100%;
+        font-weight: bold;
+        padding: 30px;
+    }
     
     div.cities {
         position: absolute;

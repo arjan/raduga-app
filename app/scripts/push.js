@@ -37,7 +37,7 @@ angular.module('app')
               console.log("Subscriptions: " + JSON.stringify(subscriptions));
 
               for (var i=0; i<subscriptions.length; i++) {
-                if (subscriptions[i] == 'debug' || subscriptions[i].length == 0) continue;
+                if (subscriptions[i] == 'debug' || subscriptions[i] == 'everybody' || subscriptions[i].length == 0) continue;
                 console.log("Unsubscribe: '" + subscriptions[i] + "'");
                 parsePlugin.subscribe(subscriptions[i], function() {});
               }

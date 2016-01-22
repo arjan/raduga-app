@@ -143,6 +143,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.phonegap.plugins.nativesettingsopener/www/settings.js",
+        "id": "com.phonegap.plugins.nativesettingsopener.Settings",
+        "clobbers": [
+            "cordova.plugins.settings"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
         "id": "cordova-plugin-file.DirectoryEntry",
         "clobbers": [
@@ -305,6 +312,7 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.2",
     "cordova-plugin-x-socialsharing": "5.0.9",
     "cordova-plugin-network-information": "1.1.0",
+    "com.phonegap.plugins.nativesettingsopener": "1.0",
     "cordova-plugin-file": "3.0.0"
 }
 // BOTTOM OF METADATA
