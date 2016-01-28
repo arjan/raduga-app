@@ -149,9 +149,9 @@ angular.module('app')
 
                 'flag_heading': 'Flag photo because:',
                 'flag_1': 'Copyright violation',
-                'flag_2': 'Graphic content',
+                'flag_2': 'Objectionable content',
                 'cancel': 'Cancel',
-                'thanks': 'Thanks',
+                'thanks': 'Thank you for reporting. Our moderators have been notified.',
 
                 'remove_image': 'Are you sure you want to remove this image from your stream?'
             },
