@@ -477,10 +477,11 @@ ion-slide.globe ng-include > div {
       bottom: 0;
       top: 0;
       margin: 20px;
-      border-radius: 50%; }
-    /* line 51, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+      border-radius: 50%;
+      background-size: auto 100%; }
+    /* line 53, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
     ion-slide.globe ng-include > div div.globe.fallback div.earth {
-      background: url(../images/earth.jpg); }
+      background-image: url(../images/earth.jpg); }
 
 /* line 4, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
 ion-slide.photos ng-include > div li[mfb-button] {

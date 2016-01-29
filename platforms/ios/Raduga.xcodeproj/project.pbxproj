@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		062DD30133AB429A8F9BCB43 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F18CBCAFF354D4AA3E77182 /* CDVAssetLibraryFilesystem.m */; };
 		0C162088D60E4C1BA90D4E37 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749B3048D7EC4F978273E027 /* SystemConfiguration.framework */; };
@@ -680,8 +681,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
