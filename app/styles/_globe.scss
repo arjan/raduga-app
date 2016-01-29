@@ -46,10 +46,12 @@
         div { @include cover;
               margin: 20px;
               border-radius: 50%;
+              background-size: auto 100%;
+              //background-repeat: no-repeat;
             }
 
         div.earth {
-            background: url(../images/earth.jpg);
+            background-image: url(../images/earth.jpg);
         }
         div.clouds {
             //background: url(../images/earth.jpg);
