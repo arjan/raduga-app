@@ -95,7 +95,8 @@ angular.module('app')
         }).then(function(m) {
           $scope.agree = function() {
             localStorage.termsAccepted = 'yes';
-            m.remove();
+              m.remove();
+              $scope.takePicture();
           };
           $scope.disagree = function() {
             m.remove();
