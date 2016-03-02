@@ -1,6 +1,6 @@
 angular.module('app')
 
-  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, $rootScope, PhotoMetaCity, checkNetworkState) {
+  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, $rootScope, PhotoMetaCity, checkNetworkState, $timeout) {
 
     $scope.online = true;
     $rootScope.$on('online', function(_, o) {
@@ -20,10 +20,16 @@ angular.module('app')
         };
       });
     }
-    refresh();
 
     $rootScope.$on('refresh', refresh);
 
+    function poll() {
+      console.log('poll');
+      refresh();
+      $timeout(poll, 60*1000);
+    };
+    poll();
+    
     $scope.$on('tracking', function(_sender, down) {
       $ionicSlideBoxDelegate.enableSlide(!down);
     });
