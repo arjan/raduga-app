@@ -34,11 +34,8 @@ angular.module('app')
                 subscriptions = [];
               }
 
-              console.log("Subscriptions: " + JSON.stringify(subscriptions));
-
               for (var i=0; i<subscriptions.length; i++) {
                 if (subscriptions[i] == 'debug' || subscriptions[i] == 'everybody' || subscriptions[i].length == 0) continue;
-                console.log("Unsubscribe: '" + subscriptions[i] + "'");
                 parsePlugin.subscribe(subscriptions[i], function() {});
               }
 
@@ -46,7 +43,7 @@ angular.module('app')
                 var subs = [];
                 for (var i=0; i<cities.length; i++) {
                   var id = cities[i].id+postFix;
-                  subs.push(id);
+                  console.log('Subscribe: ' + id);
                   parsePlugin.subscribe(id, function() {
                   });
                 }
