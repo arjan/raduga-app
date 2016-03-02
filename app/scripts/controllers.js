@@ -24,7 +24,6 @@ angular.module('app')
     $rootScope.$on('refresh', refresh);
 
     function poll() {
-      console.log('poll');
       refresh();
       $timeout(poll, 60*1000);
     };
