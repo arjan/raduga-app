@@ -1,4 +1,6 @@
-angular.module('app')
+angular
+    .module('app')
+    
     .service('API', function API($http, Config) {
 
         var photoBlacklist = (window.localStorage.photoBlacklist || "").split(/,/);
@@ -246,9 +248,9 @@ angular.module('app')
                 $rootScope.$broadcast('online', online);
                 return online ? $q.when(true) : $q.reject();
             }
-            
+
             var networkState = navigator.connection.type;
-            if (networkState == Connection.UNKNOWN || networkState == Connection.NONE) {
+            if (!ionic.Platform.isAndroid() && (networkState == Connection.UNKNOWN || networkState == Connection.NONE)) {
                 online = false;
                 $rootScope.$broadcast('online', online);
                 return $q.reject();
@@ -265,4 +267,4 @@ angular.module('app')
         }
     })
 
-;
+    ;
