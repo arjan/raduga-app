@@ -44,7 +44,7 @@ angular.module('app')
 
 angular.module('app')
 
-  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, $rootScope, PhotoMetaCity, checkNetworkState) {
+  .controller('GlobeCtrl', function GlobeCtrl($scope, API, $ionicSlideBoxDelegate, Locale, $rootScope, PhotoMetaCity, checkNetworkState, $timeout) {
 
     $scope.online = true;
     $rootScope.$on('online', function(_, o) {
@@ -64,10 +64,15 @@ angular.module('app')
         };
       });
     }
-    refresh();
 
     $rootScope.$on('refresh', refresh);
 
+    function poll() {
+      refresh();
+      $timeout(poll, 60*1000);
+    };
+    poll();
+    
     $scope.$on('tracking', function(_sender, down) {
       $ionicSlideBoxDelegate.enableSlide(!down);
     });
@@ -292,11 +297,8 @@ angular.module('app')
                 subscriptions = [];
               }
 
-              console.log("Subscriptions: " + JSON.stringify(subscriptions));
-
               for (var i=0; i<subscriptions.length; i++) {
                 if (subscriptions[i] == 'debug' || subscriptions[i] == 'everybody' || subscriptions[i].length == 0) continue;
-                console.log("Unsubscribe: '" + subscriptions[i] + "'");
                 parsePlugin.subscribe(subscriptions[i], function() {});
               }
 
@@ -304,7 +306,7 @@ angular.module('app')
                 var subs = [];
                 for (var i=0; i<cities.length; i++) {
                   var id = cities[i].id+postFix;
-                  subs.push(id);
+                  console.log('Subscribe: ' + id);
                   parsePlugin.subscribe(id, function() {
                   });
                 }
@@ -324,7 +326,9 @@ angular.module('app')
   })
 ;
 
-angular.module('app')
+angular
+    .module('app')
+    
     .service('API', function API($http, Config) {
 
         var photoBlacklist = (window.localStorage.photoBlacklist || "").split(/,/);
@@ -519,8 +523,7 @@ angular.module('app')
     .filter('cityName', function(Locale) {
         return function(c) {
             if (!c) return null;
-            var k = 'name_' + Locale.language();
-            return c[k];
+            return c.name;
         };
     })
 
@@ -572,9 +575,9 @@ angular.module('app')
                 $rootScope.$broadcast('online', online);
                 return online ? $q.when(true) : $q.reject();
             }
-            
+
             var networkState = navigator.connection.type;
-            if (networkState == Connection.UNKNOWN || networkState == Connection.NONE) {
+            if (!ionic.Platform.isAndroid() && (networkState == Connection.UNKNOWN || networkState == Connection.NONE)) {
                 online = false;
                 $rootScope.$broadcast('online', online);
                 return $q.reject();
@@ -591,7 +594,7 @@ angular.module('app')
         }
     })
 
-;
+    ;
 
 angular.module('app')
   .directive('globe', function globe(API, $rootScope) {
