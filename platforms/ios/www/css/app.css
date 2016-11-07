@@ -1,24 +1,24 @@
-/* line 7, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 7, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .text-light {
   color: #C5D1D4 !important; }
-  /* line 9, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+  /* line 9, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
   .text-light h1, .text-light h2, .text-light h3, .text-light p {
     color: #C5D1D4 !important; }
-  /* line 13, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+  /* line 13, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
   .text-light div.container h1, .text-light div.container h2, .text-light div.container h3, .text-light div.container p {
     color: #C5D1D4 !important; }
 
-/* line 18, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 18, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .text-dark {
   color: #676771 !important; }
-  /* line 20, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+  /* line 20, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
   .text-dark h1, .text-dark h2, .text-dark h3, .text-dark p {
     color: #676771 !important; }
-  /* line 24, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+  /* line 24, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
   .text-dark div.container h1, .text-dark div.container h2, .text-dark div.container h3, .text-dark div.container p {
     color: #676771 !important; }
 
-/* line 30, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 30, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0000 {
   background: #36001a;
   background: -webkit-linear-gradient(left bottom, left top, #36001a 0%, #1f0049 23%, black 100%);
@@ -26,7 +26,7 @@
   background: -webkit-linear-gradient(bottom, #36001a 0%, #1f0049 23%, black 100%);
   background: linear-gradient(to top, #36001a 0%, #1f0049 23%, black 100%); }
 
-/* line 34, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 34, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0030 {
   background: #36001a;
   background: -webkit-linear-gradient(left bottom, left top, #36001a 0%, #1f0049 23%, #000062 52%, black 100%);
@@ -34,7 +34,7 @@
   background: -webkit-linear-gradient(bottom, #36001a 0%, #1f0049 23%, #000062 52%, black 100%);
   background: linear-gradient(to top, #36001a 0%, #1f0049 23%, #000062 52%, black 100%); }
 
-/* line 38, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 38, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0100 {
   background: #431058;
   background: -webkit-linear-gradient(left bottom, left top, #431058 0%, #00586f 40%, #24002c 100%);
@@ -42,7 +42,7 @@
   background: -webkit-linear-gradient(bottom, #431058 0%, #00586f 40%, #24002c 100%);
   background: linear-gradient(to top, #431058 0%, #00586f 40%, #24002c 100%); }
 
-/* line 42, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 42, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0130 {
   background: #00586f;
   background: -webkit-linear-gradient(left bottom, left top, #00586f 0%, #00002c 100%);
@@ -50,7 +50,7 @@
   background: -webkit-linear-gradient(bottom, #00586f 0%, #00002c 100%);
   background: linear-gradient(to top, #00586f 0%, #00002c 100%); }
 
-/* line 46, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 46, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0200 {
   background: #431058;
   background: -webkit-linear-gradient(left bottom, left top, #431058 0%, #00586f 20%, #00002c 100%);
@@ -58,7 +58,7 @@
   background: -webkit-linear-gradient(bottom, #431058 0%, #00586f 20%, #00002c 100%);
   background: linear-gradient(to top, #431058 0%, #00586f 20%, #00002c 100%); }
 
-/* line 50, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 50, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0230 {
   background: #431058;
   background: -webkit-linear-gradient(left bottom, left top, #431058 0%, #005d6f 70%, #00002c 100%);
@@ -66,7 +66,7 @@
   background: -webkit-linear-gradient(bottom, #431058 0%, #005d6f 70%, #00002c 100%);
   background: linear-gradient(to top, #431058 0%, #005d6f 70%, #00002c 100%); }
 
-/* line 54, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 54, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0300 {
   background: #00589d;
   background: -webkit-linear-gradient(left bottom, left top, #00589d 0%, #4f8078 32%, #00002c 98%);
@@ -74,7 +74,7 @@
   background: -webkit-linear-gradient(bottom, #00589d 0%, #4f8078 32%, #00002c 98%);
   background: linear-gradient(to top, #00589d 0%, #4f8078 32%, #00002c 98%); }
 
-/* line 58, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 58, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0330 {
   background: #431058;
   background: -webkit-linear-gradient(left bottom, left top, #431058 0%, #00589d 20%, #4f8078 47%, #00002c 98%);
@@ -82,7 +82,7 @@
   background: -webkit-linear-gradient(bottom, #431058 0%, #00589d 20%, #4f8078 47%, #00002c 98%);
   background: linear-gradient(to top, #431058 0%, #00589d 20%, #4f8078 47%, #00002c 98%); }
 
-/* line 62, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 62, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0400 {
   background: #00589d;
   background: -webkit-linear-gradient(left bottom, left top, #00589d 5%, #4f8078 57%, #00002c 98%);
@@ -90,7 +90,7 @@
   background: -webkit-linear-gradient(bottom, #00589d 5%, #4f8078 57%, #00002c 98%);
   background: linear-gradient(to top, #00589d 5%, #4f8078 57%, #00002c 98%); }
 
-/* line 66, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 66, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0430 {
   background: #431058;
   background: -webkit-linear-gradient(left bottom, left top, #431058 0%, #68ae87 43%, #1c1f5a 98%);
@@ -98,7 +98,7 @@
   background: -webkit-linear-gradient(bottom, #431058 0%, #68ae87 43%, #1c1f5a 98%);
   background: linear-gradient(to top, #431058 0%, #68ae87 43%, #1c1f5a 98%); }
 
-/* line 70, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 70, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0500 {
   background: #771062;
   background: -webkit-linear-gradient(left bottom, left top, #771062 0%, #68ae87 30%, #1c1f5a 98%);
@@ -106,7 +106,7 @@
   background: -webkit-linear-gradient(bottom, #771062 0%, #68ae87 30%, #1c1f5a 98%);
   background: linear-gradient(to top, #771062 0%, #68ae87 30%, #1c1f5a 98%); }
 
-/* line 74, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 74, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0530 {
   background: #9d6a62;
   background: -webkit-linear-gradient(left bottom, left top, #9d6a62 0%, #68ae9d 45%, #1c1f5a 97%);
@@ -114,7 +114,7 @@
   background: -webkit-linear-gradient(bottom, #9d6a62 0%, #68ae9d 45%, #1c1f5a 97%);
   background: linear-gradient(to top, #9d6a62 0%, #68ae9d 45%, #1c1f5a 97%); }
 
-/* line 78, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 78, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0600 {
   background: #74aa9b;
   background: -webkit-linear-gradient(left bottom, left top, #74aa9b 0%, #605871 45%);
@@ -122,7 +122,7 @@
   background: -webkit-linear-gradient(bottom, #74aa9b 0%, #605871 45%);
   background: linear-gradient(to top, #74aa9b 0%, #605871 45%); }
 
-/* line 82, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 82, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0630 {
   background: #db8e8b;
   background: -webkit-linear-gradient(left bottom, left top, #db8e8b 0%, #74aa9b 68%, #5f5871 100%);
@@ -130,7 +130,7 @@
   background: -webkit-linear-gradient(bottom, #db8e8b 0%, #74aa9b 68%, #5f5871 100%);
   background: linear-gradient(to top, #db8e8b 0%, #74aa9b 68%, #5f5871 100%); }
 
-/* line 86, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 86, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0700 {
   background: #dbc1b7;
   background: -webkit-linear-gradient(left bottom, left top, #dbc1b7 18%, #74aa9b 55%);
@@ -138,7 +138,7 @@
   background: -webkit-linear-gradient(bottom, #dbc1b7 18%, #74aa9b 55%);
   background: linear-gradient(to top, #dbc1b7 18%, #74aa9b 55%); }
 
-/* line 90, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 90, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0730 {
   background: #dbc1b7;
   background: -webkit-linear-gradient(left bottom, left top, #dbc1b7 18%, #74aa9b 63%, #6cd8ea 98%);
@@ -146,7 +146,7 @@
   background: -webkit-linear-gradient(bottom, #dbc1b7 18%, #74aa9b 63%, #6cd8ea 98%);
   background: linear-gradient(to top, #dbc1b7 18%, #74aa9b 63%, #6cd8ea 98%); }
 
-/* line 94, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 94, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0800 {
   background: #dbc1b7;
   background: -webkit-linear-gradient(left bottom, left top, #dbc1b7 18%, #45fff9 75%, #45c9ea 100%);
@@ -154,7 +154,7 @@
   background: -webkit-linear-gradient(bottom, #dbc1b7 18%, #45fff9 75%, #45c9ea 100%);
   background: linear-gradient(to top, #dbc1b7 18%, #45fff9 75%, #45c9ea 100%); }
 
-/* line 98, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 98, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0830 {
   background: #dbc1b7;
   background: -webkit-linear-gradient(left bottom, left top, #dbc1b7 18%, #60fff9 97%);
@@ -162,7 +162,7 @@
   background: -webkit-linear-gradient(bottom, #dbc1b7 18%, #60fff9 97%);
   background: linear-gradient(to top, #dbc1b7 18%, #60fff9 97%); }
 
-/* line 102, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 102, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0900 {
   background: #fcb28b;
   background: -webkit-linear-gradient(left bottom, left top, #fcb28b 0%, #8bfffa 70%, #c6fffa 96%);
@@ -170,7 +170,7 @@
   background: -webkit-linear-gradient(bottom, #fcb28b 0%, #8bfffa 70%, #c6fffa 96%);
   background: linear-gradient(to top, #fcb28b 0%, #8bfffa 70%, #c6fffa 96%); }
 
-/* line 106, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 106, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t0930 {
   background: #fcb28b;
   background: -webkit-linear-gradient(left bottom, left top, #fcb28b 0%, #8bfffa 100%);
@@ -178,7 +178,7 @@
   background: -webkit-linear-gradient(bottom, #fcb28b 0%, #8bfffa 100%);
   background: linear-gradient(to top, #fcb28b 0%, #8bfffa 100%); }
 
-/* line 110, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 110, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1000 {
   background: #b2fff7;
   background: -webkit-linear-gradient(left bottom, left top, #b2fff7 0%, #d5e8db 72%, #a7e9f6 98%);
@@ -186,7 +186,7 @@
   background: -webkit-linear-gradient(bottom, #b2fff7 0%, #d5e8db 72%, #a7e9f6 98%);
   background: linear-gradient(to top, #b2fff7 0%, #d5e8db 72%, #a7e9f6 98%); }
 
-/* line 114, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 114, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1030 {
   background: #b2fff7;
   background: -webkit-linear-gradient(left bottom, left top, #b2fff7 0%, #f8e3eb 35%, #d5e8db 72%, #a7e9f6 98%);
@@ -194,7 +194,7 @@
   background: -webkit-linear-gradient(bottom, #b2fff7 0%, #f8e3eb 35%, #d5e8db 72%, #a7e9f6 98%);
   background: linear-gradient(to top, #b2fff7 0%, #f8e3eb 35%, #d5e8db 72%, #a7e9f6 98%); }
 
-/* line 118, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 118, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1100 {
   background: #b2ffff;
   background: -webkit-linear-gradient(left bottom, left top, #b2ffff 0%, #f8ffeb 20%, #d5e8db 70%);
@@ -202,7 +202,7 @@
   background: -webkit-linear-gradient(bottom, #b2ffff 0%, #f8ffeb 20%, #d5e8db 70%);
   background: linear-gradient(to top, #b2ffff 0%, #f8ffeb 20%, #d5e8db 70%); }
 
-/* line 122, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 122, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1130 {
   background: #ceffff;
   background: -webkit-linear-gradient(left bottom, left top, #ceffff 25%, #c9eaff 100%);
@@ -210,7 +210,7 @@
   background: -webkit-linear-gradient(bottom, #ceffff 25%, #c9eaff 100%);
   background: linear-gradient(to top, #ceffff 25%, #c9eaff 100%); }
 
-/* line 126, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 126, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1200 {
   background: #bcf4ff;
   background: -webkit-linear-gradient(left bottom, left top, #bcf4ff 0%, #fffffa 75%, #65aece 100%);
@@ -218,7 +218,7 @@
   background: -webkit-linear-gradient(bottom, #bcf4ff 0%, #fffffa 75%, #65aece 100%);
   background: linear-gradient(to top, #bcf4ff 0%, #fffffa 75%, #65aece 100%); }
 
-/* line 130, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 130, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1230 {
   background: #7fd9ff;
   background: -webkit-linear-gradient(left bottom, left top, #7fd9ff 0%, #fffffa 60%, #65aece 100%);
@@ -226,7 +226,7 @@
   background: -webkit-linear-gradient(bottom, #7fd9ff 0%, #fffffa 60%, #65aece 100%);
   background: linear-gradient(to top, #7fd9ff 0%, #fffffa 60%, #65aece 100%); }
 
-/* line 134, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 134, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1300 {
   background: #afd1ff;
   background: -webkit-linear-gradient(left bottom, left top, #afd1ff 0%, #d3ffff 45%, #6a95ce 100%);
@@ -234,7 +234,7 @@
   background: -webkit-linear-gradient(bottom, #afd1ff 0%, #d3ffff 45%, #6a95ce 100%);
   background: linear-gradient(to top, #afd1ff 0%, #d3ffff 45%, #6a95ce 100%); }
 
-/* line 138, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 138, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1330 {
   background: #dffdff;
   background: -webkit-linear-gradient(left bottom, left top, #dffdff 15%, #98cece 95%);
@@ -242,7 +242,7 @@
   background: -webkit-linear-gradient(bottom, #dffdff 15%, #98cece 95%);
   background: linear-gradient(to top, #dffdff 15%, #98cece 95%); }
 
-/* line 142, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 142, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1400 {
   background: #ffc990;
   background: -webkit-linear-gradient(left bottom, left top, #ffc990 5%, #defff6 68%, #98cece 97%);
@@ -250,7 +250,7 @@
   background: -webkit-linear-gradient(bottom, #ffc990 5%, #defff6 68%, #98cece 97%);
   background: linear-gradient(to top, #ffc990 5%, #defff6 68%, #98cece 97%); }
 
-/* line 146, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 146, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1430 {
   background: #fcd6c9;
   background: -webkit-linear-gradient(left bottom, left top, #fcd6c9 5%, #c1fffa 57%, #3e5a83 100%);
@@ -258,7 +258,7 @@
   background: -webkit-linear-gradient(bottom, #fcd6c9 5%, #c1fffa 57%, #3e5a83 100%);
   background: linear-gradient(to top, #fcd6c9 5%, #c1fffa 57%, #3e5a83 100%); }
 
-/* line 150, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 150, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1500 {
   background: #d9c8b6;
   background: -webkit-linear-gradient(left bottom, left top, #d9c8b6 30%, #9ff0ff 72%, #3e5a83 98%);
@@ -266,7 +266,7 @@
   background: -webkit-linear-gradient(bottom, #d9c8b6 30%, #9ff0ff 72%, #3e5a83 98%);
   background: linear-gradient(to top, #d9c8b6 30%, #9ff0ff 72%, #3e5a83 98%); }
 
-/* line 154, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 154, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1530 {
   background: #e8c9a7;
   background: -webkit-linear-gradient(left bottom, left top, #e8c9a7 20%, #40a0bf 100%);
@@ -274,7 +274,7 @@
   background: -webkit-linear-gradient(bottom, #e8c9a7 20%, #40a0bf 100%);
   background: linear-gradient(to top, #e8c9a7 20%, #40a0bf 100%); }
 
-/* line 158, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 158, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1600 {
   background: #fcdea7;
   background: -webkit-linear-gradient(left bottom, left top, #fcdea7 0%, #ffb2c1 30%, #40a0bf 100%);
@@ -282,7 +282,7 @@
   background: -webkit-linear-gradient(bottom, #fcdea7 0%, #ffb2c1 30%, #40a0bf 100%);
   background: linear-gradient(to top, #fcdea7 0%, #ffb2c1 30%, #40a0bf 100%); }
 
-/* line 162, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 162, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1630 {
   background: #fcdec4;
   background: -webkit-linear-gradient(left bottom, left top, #fcdec4 0%, #ffc6c1 48%, #ff7ec1 95%);
@@ -290,7 +290,7 @@
   background: -webkit-linear-gradient(bottom, #fcdec4 0%, #ffc6c1 48%, #ff7ec1 95%);
   background: linear-gradient(to top, #fcdec4 0%, #ffc6c1 48%, #ff7ec1 95%); }
 
-/* line 166, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 166, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1700 {
   background: #fcb28b;
   background: -webkit-linear-gradient(left bottom, left top, #fcb28b 0%, #f56a93 60%, #3e5a83 98%);
@@ -298,7 +298,7 @@
   background: -webkit-linear-gradient(bottom, #fcb28b 0%, #f56a93 60%, #3e5a83 98%);
   background: linear-gradient(to top, #fcb28b 0%, #f56a93 60%, #3e5a83 98%); }
 
-/* line 170, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 170, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1730 {
   background: #fcb28b;
   background: -webkit-linear-gradient(left bottom, left top, #fcb28b 5%, #3e5a83 100%);
@@ -306,7 +306,7 @@
   background: -webkit-linear-gradient(bottom, #fcb28b 5%, #3e5a83 100%);
   background: linear-gradient(to top, #fcb28b 5%, #3e5a83 100%); }
 
-/* line 174, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 174, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1800 {
   background: #d17971;
   background: -webkit-linear-gradient(left bottom, left top, #d17971 20%, #5a5895 82%, #403e5a 100%);
@@ -314,7 +314,7 @@
   background: -webkit-linear-gradient(bottom, #d17971 20%, #5a5895 82%, #403e5a 100%);
   background: linear-gradient(to top, #d17971 20%, #5a5895 82%, #403e5a 100%); }
 
-/* line 178, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 178, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1830 {
   background: #fd2922;
   background: -webkit-linear-gradient(left bottom, left top, #fd2922 0%, #fc6c2e 10%, #d17971 38%, #5a58c2 82%, #403e5a 100%);
@@ -322,7 +322,7 @@
   background: -webkit-linear-gradient(bottom, #fd2922 0%, #fc6c2e 10%, #d17971 38%, #5a58c2 82%, #403e5a 100%);
   background: linear-gradient(to top, #fd2922 0%, #fc6c2e 10%, #d17971 38%, #5a58c2 82%, #403e5a 100%); }
 
-/* line 182, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 182, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1900 {
   background: #903f7b;
   background: -webkit-linear-gradient(left bottom, left top, #903f7b 5%, #84baff 63%, #46006a 90%);
@@ -330,7 +330,7 @@
   background: -webkit-linear-gradient(bottom, #903f7b 5%, #84baff 63%, #46006a 90%);
   background: linear-gradient(to top, #903f7b 5%, #84baff 63%, #46006a 90%); }
 
-/* line 186, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 186, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t1930 {
   background: #903f7b;
   background: -webkit-linear-gradient(left bottom, left top, #903f7b 5%, #84baff 22%, #46006a 90%);
@@ -338,7 +338,7 @@
   background: -webkit-linear-gradient(bottom, #903f7b 5%, #84baff 22%, #46006a 90%);
   background: linear-gradient(to top, #903f7b 5%, #84baff 22%, #46006a 90%); }
 
-/* line 190, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 190, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2000 {
   background: #00b1bf;
   background: -webkit-linear-gradient(left bottom, left top, #00b1bf 5%, #74409d 68%, #12006a 95%);
@@ -346,7 +346,7 @@
   background: -webkit-linear-gradient(bottom, #00b1bf 5%, #74409d 68%, #12006a 95%);
   background: linear-gradient(to top, #00b1bf 5%, #74409d 68%, #12006a 95%); }
 
-/* line 194, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 194, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2030 {
   background: #f57c77;
   background: -webkit-linear-gradient(left bottom, left top, #f57c77 18%, #993f7b 55%, #391753 100%);
@@ -354,7 +354,7 @@
   background: -webkit-linear-gradient(bottom, #f57c77 18%, #993f7b 55%, #391753 100%);
   background: linear-gradient(to top, #f57c77 18%, #993f7b 55%, #391753 100%); }
 
-/* line 198, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 198, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2100 {
   background: #903f7b;
   background: -webkit-linear-gradient(left bottom, left top, #903f7b 0%, #5a6a7e 48%, #422058 100%);
@@ -362,7 +362,7 @@
   background: -webkit-linear-gradient(bottom, #903f7b 0%, #5a6a7e 48%, #422058 100%);
   background: linear-gradient(to top, #903f7b 0%, #5a6a7e 48%, #422058 100%); }
 
-/* line 202, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 202, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2130 {
   background: #1400f2;
   background: -webkit-linear-gradient(left bottom, left top, #1400f2 15%, #422058 78%);
@@ -370,7 +370,7 @@
   background: -webkit-linear-gradient(bottom, #1400f2 15%, #422058 78%);
   background: linear-gradient(to top, #1400f2 15%, #422058 78%); }
 
-/* line 206, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 206, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2200 {
   background: #0e007f;
   background: -webkit-linear-gradient(left bottom, left top, #0e007f 0%, #6727ea 10%, #0d2058 58%, #0d201c 95%);
@@ -378,7 +378,7 @@
   background: -webkit-linear-gradient(bottom, #0e007f 0%, #6727ea 10%, #0d2058 58%, #0d201c 95%);
   background: linear-gradient(to top, #0e007f 0%, #6727ea 10%, #0d2058 58%, #0d201c 95%); }
 
-/* line 210, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 210, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2230 {
   background: #0e007f;
   background: -webkit-linear-gradient(left bottom, left top, #0e007f 0%, #0d2058 58%, #0d201c 95%);
@@ -386,7 +386,7 @@
   background: -webkit-linear-gradient(bottom, #0e007f 0%, #0d2058 58%, #0d201c 95%);
   background: linear-gradient(to top, #0e007f 0%, #0d2058 58%, #0d201c 95%); }
 
-/* line 214, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 214, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2300 {
   background: #36001a;
   background: -webkit-linear-gradient(left bottom, left top, #36001a 0%, #1f0049 22%, #000062 52%, black 100%);
@@ -394,7 +394,7 @@
   background: -webkit-linear-gradient(bottom, #36001a 0%, #1f0049 22%, #000062 52%, black 100%);
   background: linear-gradient(to top, #36001a 0%, #1f0049 22%, #000062 52%, black 100%); }
 
-/* line 218, /Users/arjan/devel/raduga/raduga-app/app/styles/_gradients.scss */
+/* line 218, /home/arjan/devel/raduga/app/app/styles/_gradients.scss */
 .t2330 {
   background: #1f0049;
   background: -webkit-linear-gradient(left bottom, left top, #1f0049 23%, black 100%);
@@ -402,21 +402,21 @@
   background: -webkit-linear-gradient(bottom, #1f0049 23%, black 100%);
   background: linear-gradient(to top, #1f0049 23%, black 100%); }
 
-/* line 5, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 5, /home/arjan/devel/raduga/app/app/styles/app.scss */
 body {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-transition: all 1500ms;
           transition: all 1500ms;
   background: white; }
-  /* line 11, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+  /* line 11, /home/arjan/devel/raduga/app/app/styles/app.scss */
   body.cloak {
     background: black; }
 
-/* line 28, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 28, /home/arjan/devel/raduga/app/app/styles/app.scss */
 div.slider {
   height: 100%; }
 
-/* line 31, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 31, /home/arjan/devel/raduga/app/app/styles/app.scss */
 div.slider-pager {
   bottom: 0;
   left: 50%;
@@ -424,35 +424,35 @@ div.slider-pager {
   margin-left: -60px;
   padding: 15px 0 30px 0; }
 
-/* line 41, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 41, /home/arjan/devel/raduga/app/app/styles/app.scss */
 ion-slide > ng-include > div {
   height: 100%; }
 
-/* line 1, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+/* line 1, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
 ion-slide.globe ng-include > div {
   background: black;
   position: relative;
   font-size: 15px;
   text-align: center; }
-  /* line 17, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+  /* line 17, /home/arjan/devel/raduga/app/app/styles/app.scss */
   ion-slide.globe ng-include > div > .background, ion-slide.globe ng-include > div > .container {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0; }
-  /* line 11, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+  /* line 11, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
   ion-slide.globe ng-include > div div.globe {
     z-index: 1;
     height: 100%; }
-  /* line 16, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+  /* line 16, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
   ion-slide.globe ng-include > div div.last-photo {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     padding: 20px 10px; }
-  /* line 23, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+  /* line 23, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
   ion-slide.globe ng-include > div div.center {
     position: absolute;
     top: 160px;
@@ -460,19 +460,20 @@ ion-slide.globe ng-include > div {
     width: 100%;
     font-weight: bold;
     padding: 30px; }
-  /* line 32, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+  /* line 32, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
   ion-slide.globe ng-include > div div.cities {
     position: absolute;
     bottom: 30px;
     left: 0;
     right: 0; }
-    /* line 39, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+    /* line 39, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
     ion-slide.globe ng-include > div div.cities div.cityitem {
       padding: 10px; }
-  /* line 44, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+  /* line 44, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
   ion-slide.globe ng-include > div div.globe.fallback {
+    z-index: 0;
     position: relative; }
-    /* line 46, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+    /* line 47, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
     ion-slide.globe ng-include > div div.globe.fallback div {
       position: absolute;
       left: 0;
@@ -482,39 +483,39 @@ ion-slide.globe ng-include > div {
       margin: 20px;
       border-radius: 50%;
       background-size: auto 100%; }
-    /* line 53, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
+    /* line 54, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
     ion-slide.globe ng-include > div div.globe.fallback div.earth {
       background-image: url(../images/earth.jpg); }
 
-/* line 4, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+/* line 4, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
 ion-slide.photos ng-include > div li[mfb-button] {
   position: absolute;
   bottom: 30px;
   right: 30px;
   list-style-type: none; }
-  /* line 5, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  /* line 5, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
   ion-slide.photos ng-include > div li[mfb-button] a {
     background: #00f900;
     width: 55px;
     height: 55px; }
-    /* line 7, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+    /* line 7, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
     ion-slide.photos ng-include > div li[mfb-button] a i {
       font-size: 30px;
       line-height: 55px; }
 
-/* line 17, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+/* line 17, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
 ion-slide.photos ng-include > div div.spacer {
   height: 100px; }
 
-/* line 21, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+/* line 21, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
 ion-slide.photos ng-include > div div.photo {
   position: relative;
   height: auto;
   line-height: 0; }
-  /* line 25, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  /* line 25, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
   ion-slide.photos ng-include > div div.photo img {
     width: 100%; }
-  /* line 28, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  /* line 28, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
   ion-slide.photos ng-include > div div.photo div.meta {
     line-height: 1.2;
     display: block;
@@ -524,19 +525,19 @@ ion-slide.photos ng-include > div div.photo {
     background: #fff;
     color: black;
     padding: 4px 8px; }
-  /* line 37, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+  /* line 37, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
   ion-slide.photos ng-include > div div.photo div.share {
     position: absolute;
     bottom: 4px;
     right: 8px;
     font-size: 2.5em;
     color: #fff; }
-    /* line 42, /Users/arjan/devel/raduga/raduga-app/app/styles/_photos.scss */
+    /* line 42, /home/arjan/devel/raduga/app/app/styles/_photos.scss */
     ion-slide.photos ng-include > div div.photo div.share i {
       padding: 10px 2px;
       text-shadow: 0 0 10px black; }
 
-/* line 17, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 17, /home/arjan/devel/raduga/app/app/styles/app.scss */
 ion-slide.about ng-include > div > .background, ion-slide.about ng-include > div > .container {
   position: absolute;
   top: 0;
@@ -544,24 +545,24 @@ ion-slide.about ng-include > div > .background, ion-slide.about ng-include > div
   right: 0;
   left: 0; }
 
-/* line 5, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+/* line 5, /home/arjan/devel/raduga/app/app/styles/_about.scss */
 ion-slide.about ng-include > div div.scroll {
   height: 100%; }
 
-/* line 9, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+/* line 9, /home/arjan/devel/raduga/app/app/styles/_about.scss */
 ion-slide.about ng-include > div div.container {
   padding: 20px 10px; }
-  /* line 10, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+  /* line 10, /home/arjan/devel/raduga/app/app/styles/_about.scss */
   ion-slide.about ng-include > div div.container h1, ion-slide.about ng-include > div div.container h2, ion-slide.about ng-include > div div.container h3, ion-slide.about ng-include > div div.container p {
     color: inherit;
     margin-bottom: 0;
     font-size: 13px;
     line-height: 16px; }
-  /* line 16, /Users/arjan/devel/raduga/raduga-app/app/styles/_about.scss */
+  /* line 16, /home/arjan/devel/raduga/app/app/styles/_about.scss */
   ion-slide.about ng-include > div div.container h1, ion-slide.about ng-include > div div.container h2, ion-slide.about ng-include > div div.container h3 {
     font-weight: bold; }
 
-/* line 59, /Users/arjan/devel/raduga/raduga-app/app/styles/app.scss */
+/* line 59, /home/arjan/devel/raduga/app/app/styles/app.scss */
 body.platform-ios div.about div.container, body.platform-ios div.globe div.container {
   margin-top: 15px; }
 
