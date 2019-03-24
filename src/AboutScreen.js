@@ -1,4 +1,5 @@
 import React from 'react'
+import label from './labels'
 
 import DynamicBackground from './DynamicBackground'
 
@@ -7,9 +8,7 @@ export default class extends React.Component {
     return (
       <div className="screen--wrapper about">
         <DynamicBackground />
-        <div className="about">
-          fdsfdsfds
-        </div>
+        <div className="about" dangerouslySetInnerHTML={{ __html: label('about') }} />
       </div>
     )
   }

@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+               "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+               sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,22 +22,50 @@ main {
     height: 100vh;
     position: relative;
   }
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    z-index: 10;
+    span {
+      display: inline-block;
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0.2);
+      margin-left: 10px;
+      &:first-child { margin-left: 0; }
+      &.selected {
+        background-color: rgba(0,0,0,1.0);
+      }
+    }
+  }
 }
 
 .screen--wrapper {
   @include cover;
-  overflow: hidden;
+  overflow: auto;
 
   &.about {
+    background-color: #23538a;
+    color: #666;
     div.about {
       position: relative;
       padding: 20px;
+      * { font-size: 14px;
+          margin: 0; }
+      h2 {
+        margin-top: 20px;
+      }
+
     }
   }
 }
 
 .dynamic-background--wrapper {
   @include cover;
+  //  position: fixed;
   background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
