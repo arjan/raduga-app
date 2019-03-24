@@ -1,8 +1,0 @@
-angular.module('app')
-  .constant('Config', {
-    baseUrl: 'http://example.com/app',
-    parseAppId: '3298409238409328409238409234fd09s0fds8',
-    parseClientKey: '0fds8f0dsf9sd8f9sd78f7ads98fsda',
-    debug: false
-  })
-;
