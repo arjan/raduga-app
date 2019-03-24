@@ -9,7 +9,7 @@ function qs(params) {
 
 var jsonGetter = function(path) {
   return function(args) {
-    return fetch(Config.BASE_URL + path + qs(args)).then(r => r.json())
+    return fetch(Config.BASE_URL + path + qs(args || {})).then(r => r.json())
   }
 }
 

@@ -2,7 +2,29 @@ import Config from './Config'
 
 const LABELS = {
   en: {
-    about: `
+    'rainbow_spotted_pre': 'Last spotted rainbow:',
+    'rainbow_spotted_near': ' ',
+    'rainbow_predicted_near': 'Rainbows predicted near',
+    'no_rainbow_alerts': 'No rainbow alerts at the moment.',
+    'you_are_near': 'You are near:',
+    'you_are_too_far': 'You are too far from a Russian city to receive rainbow notifications.',
+
+    'error': 'Error',
+    'ok': 'OK',
+    'settings': 'Settings',
+    'no_internet_dialog': 'Raduga requires an internet connection',
+    'gps_dialog': 'Switch on gps to use the camera',
+    'cannot_use': 'Cannot use Raduga, no internet connection available.',
+
+    'flag_heading': 'Flag photo because:',
+    'flag_1': 'Copyright violation',
+    'flag_2': 'Objectionable content',
+    'cancel': 'Cancel',
+    'thanks': 'Thank you for reporting. Our moderators have been notified.',
+
+    'remove_image': 'Are you sure you want to remove this image from your stream?',
+
+    'about': `
             <h1>About this app:</h1>
 
             <p>Raduga uses live weather data to predict the formation of rainbows, and sends you an alert when rainbows are likely to appear in your neighbourhood.</p>
@@ -30,8 +52,32 @@ const LABELS = {
             </p>
             <br/><br/>
     `
+
   },
   ru: {
+    'rainbow_spotted_pre': 'Последняя обнаруженная радуга:',
+    'rainbow_spotted_near': '',
+
+    'rainbow_predicted_near': 'Радуги предсказаны вблизи',
+    'no_rainbow_alerts': 'Нет радуги оповещения на данный момент.',
+    'you_are_near': 'Вы рядом с:',
+    'you_are_too_far': 'Вы находитесь слишком далеко от города, чтобы получать уведомления радуги.',
+
+    'error': 'ошибка',
+    'ok': 'ок',
+    'settings': 'установки',
+    'no_internet_dialog': 'Радуге требуется соединение с интернетом',
+    'gps_dialog': 'Включите gps, чтобы пользоваться камерой',
+    'cannot_use': 'Невозможно использовать Радугу. Невозможно соединение с интернетом',
+
+    'flag_heading': 'Отметьте фотографию в связи с:',
+    'flag_1': 'содержанием изображения',
+    'flag_2': 'нарушением копирайт',
+    'cancel': 'Отмена',
+    'thanks': 'Спасибо',
+
+    'remove_image': 'Вы действительно хотите удалить этот файл?',
+
     about: `
       <h1>Об этом приложении:</h1>
 
@@ -73,7 +119,6 @@ const LABELS = {
       </p>`
   }
 }
-
 
 export default function label(key) {
   const locale = Config.getLocale()

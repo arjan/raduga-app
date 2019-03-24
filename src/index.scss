@@ -46,6 +46,7 @@ main {
 .screen--wrapper {
   @include cover;
   overflow: auto;
+  font-size: 14px;
 
   &.about {
     background-color: #23538a;
@@ -59,6 +60,18 @@ main {
         margin-top: 20px;
       }
 
+    }
+  }
+
+  &.globe {
+    background-color: #23538a;
+    color: #666;
+
+    .cities {
+      position: absolute;
+      left: 0; right: 0; bottom: 60px;
+      z-index: 10;
+      text-align: center;
     }
   }
 }
