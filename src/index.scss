@@ -13,10 +13,39 @@ body {
   top: 0; bottom: 0; left: 0; right: 0;
 }
 
-.globe--wrapper {
+main {
+  @include cover;
+
+  .main-frame {
+  }
+  .view {
+    height: 100vh;
+    position: relative;
+  }
+}
+
+.screen--wrapper {
   @include cover;
   overflow: hidden;
 
-  background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  &.about {
+    div.about {
+      position: relative;
+      padding: 20px;
+    }
+  }
+}
 
+.dynamic-background--wrapper {
+  @include cover;
+  background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.globe--wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  top: 50%;
+  transform: translate(0, -50%);
+  overflow: hidden;
 }

@@ -14,9 +14,11 @@ export default class extends React.Component {
 
   componentDidMount() {
     const { width, height } = this._div.getBoundingClientRect()
+    console.log('width', width)
+    console.log('height', height)
 
     // Earth params
-    var radius   = 0.3,
+    var radius   = 0.5,
 	segments = 48,
 	rotation = 6;
 
@@ -24,14 +26,14 @@ export default class extends React.Component {
 
     var scene = new THREE.Scene();
 
-    var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 10000);
+    var camera = new THREE.PerspectiveCamera(45, 1, 0.01, 10000);
     camera.position.z = 1.6;
 
     var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
     var r = window.devicePixelRatio;
-    renderer.setSize(r*width, r*height);
+    renderer.setSize(r*width, r*width);
     renderer.domElement.style.width = width + 'px';
-    renderer.domElement.style.height = height + 'px';
+    renderer.domElement.style.height = width + 'px';
 
     scene.add(new THREE.AmbientLight(0x222222));
 
@@ -59,7 +61,7 @@ export default class extends React.Component {
     function render() {
       controls.update();
       sphere.rotation.y += 0.0015;
-      clouds.rotation.y += 0.0014;
+      clouds.rotation.y += 0.0015;
       requestAnimationFrame(render);
       renderer.render(scene, camera);
     }
