@@ -16,4 +16,7 @@ body {
 .globe--wrapper {
   @include cover;
   overflow: hidden;
+
+  background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
 }

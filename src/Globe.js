@@ -16,7 +16,7 @@ export default class extends React.Component {
     const { width, height } = this._div.getBoundingClientRect()
 
     // Earth params
-    var radius   = 0.5,
+    var radius   = 0.3,
 	segments = 48,
 	rotation = 6;
 
@@ -65,13 +65,12 @@ export default class extends React.Component {
     }
 
     function createSphere(radius, segments) {
+      const bumpMap = new THREE.TextureLoader().load('images/elev_bump_4k.jpg')
+      const map = new THREE.TextureLoader().load('images/2_no_clouds_4k.jpg')
+
       return new THREE.Mesh(
 	new THREE.SphereGeometry(radius, segments, segments),
-	new THREE.MeshPhongMaterial({
-	  map:         new THREE.TextureLoader().load('images/earth.jpg'),
-	  bumpMap:     new THREE.TextureLoader().load('images/bump.jpg'),
-	  bumpScale:   0.005,
-	})
+	new THREE.MeshPhongMaterial({ map, bumpMap, bumpScale:   0.015 })
       );
     }
 
@@ -83,9 +82,9 @@ export default class extends React.Component {
 	new THREE.MeshPhongMaterial({
 	  map:         clouds,
 	  transparent: true,
-          specular: 0xcccccc,
-          shininess: 5
-
+          specular: 0xffffff,
+          shininess: 5,
+          blendDstAlpha: 0.5
 	})
       );
     }
