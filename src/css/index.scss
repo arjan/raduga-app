@@ -67,7 +67,7 @@ main {
     background-color: #23538a;
     color: #666;
 
-    .cities {
+    .bottom {
       position: absolute;
       left: 0; right: 0; bottom: 60px;
       z-index: 10;
@@ -79,6 +79,14 @@ main {
     .city:last-child:after {
       content: "";
     }
+
+    .top {
+      position: absolute;
+      left: 0; right: 0; top: 40px;
+      z-index: 10;
+      text-align: center;
+    }
+
   }
 }
 
