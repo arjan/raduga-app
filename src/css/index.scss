@@ -73,6 +73,12 @@ main {
       z-index: 10;
       text-align: center;
     }
+    .city:after {
+      content: ", "
+    }
+    .city:last-child:after {
+      content: "";
+    }
   }
 }
 
@@ -90,3 +96,22 @@ main {
   transform: translate(0, -50%);
   overflow: hidden;
 }
+
+.photo-item--wrapper {
+  position: relative;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .metadata {
+    position: absolute;
+    bottom: 4px; left: 4px;
+    background-color: white;
+    padding: 2px 4px;
+    color: black;
+  }
+}
+
+
+@import "ptr";

@@ -8,7 +8,9 @@ import label from './labels'
 
 function City({ city }) {
   if (!city) return null
-  return city['name_' + Config.getLocale()] || city.name_en || null
+  const name = city['name_' + Config.getLocale()] || city.name_en
+  if (!name) return null
+  return <span className="city">{name}</span>
 }
 
 export default class extends React.Component {

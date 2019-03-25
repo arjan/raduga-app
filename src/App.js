@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import classNames from 'classnames'
 import { ViewPager, Frame, Track, View } from 'react-view-pager'
 
+import PhotosScreen from './PhotosScreen'
 import GlobeScreen from './GlobeScreen'
 import AboutScreen from './AboutScreen'
 
 class App extends Component {
   state = {
-    selectedView: 1
+    selectedView: 0
   }
   onViewChange = ([ selectedView ]) => {
     this.setState({ selectedView })
@@ -27,7 +28,9 @@ class App extends Component {
             onViewChange={this.onViewChange}
 
           >
-            <View className="view">1</View>
+            <View className="view">
+              <PhotosScreen />
+            </View>
             <View className="view">
               <GlobeScreen />
             </View>

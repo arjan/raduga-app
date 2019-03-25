@@ -18,6 +18,7 @@ const API = {
   getClosestCities: jsonGetter('app/closest-cities'),
   getCloudsURL: function() {
     return Config.BASE_URL + "latest/clouds.png";
-  }
+  },
+  getRainbowPhotos: jsonGetter('/app/photos'),
 }
 export default API

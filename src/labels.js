@@ -122,5 +122,5 @@ const LABELS = {
 
 export default function label(key) {
   const locale = Config.getLocale()
-  return LABELS[locale] && LABELS[locale][key] || LABELS['en'][key]
+  return (LABELS[locale] && LABELS[locale][key]) || LABELS['en'][key]
 }
