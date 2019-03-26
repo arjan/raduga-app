@@ -1,6 +1,9 @@
 import React from 'react'
 import moment from 'moment'
 import Config from './Config'
+import DeleteIcon from '@material-ui/icons/DeleteOutlined';
+import FlagIcon from '@material-ui/icons/FlagOutlined';
+import ShareIcon from '@material-ui/icons/Share';
 
 export default class extends React.Component {
 
@@ -26,7 +29,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { photo } = this.props
+    const { photo, onRemove } = this.props
     const metadata = JSON.parse(photo.meta)
 
     const ts = moment(photo.created).format('DD-MM-YYYY HH:mm');
@@ -38,6 +41,11 @@ export default class extends React.Component {
         <img src={this.photoUrl(photo, 800)} alt={description} />
         <div className="metadata">
           {description}
+        </div>
+        <div className="controls">
+          <DeleteIcon onClick={() => onRemove(photo.id)} />
+          <FlagIcon />
+          <ShareIcon />
         </div>
       </div>
     )

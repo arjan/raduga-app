@@ -1,23 +1,38 @@
 import React from 'react'
-import ReactPullToRefresh from 'react-pull-to-refresh'
+
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 import API from './API'
 import PhotoItem from './PhotoItem'
+import ConfirmRemoveDialog from './ConfirmRemoveDialog'
+
 
 export default class extends React.Component {
   state = {
-    photos: []
+    photos: [],
+    confirmRemove: null
   }
 
   async componentWillMount() {
-    const { photos } = await API.getRainbowPhotos()
+    this.refresh()
+  }
+
+  async refresh() {
+    const photos = await API.getRainbowPhotos()
     this.setState({ photos })
   }
 
-  handleRefresh = async (resolve, _reject) => {
-    const { photos } = await API.getRainbowPhotos()
-    this.setState({ photos })
-    resolve()
+  onRemove = id => {
+    this.setState({ confirmRemove: id })
+  }
+
+  confirmRemove = async remove => {
+    console.log('this.state.confirmRemove', this.state.confirmRemove)
+
+    API.photoBlacklist(this.state.confirmRemove)
+    await this.refresh()
+    this.setState({ confirmRemove: null })
   }
 
   render() {
@@ -25,9 +40,9 @@ export default class extends React.Component {
 
     return (
       <div className="screen--wrapper photos">
-        <ReactPullToRefresh onRefresh={this.handleRefresh}>
-          {photos.map((p, i) => <PhotoItem key={i} photo={p} />)}
-        </ReactPullToRefresh>
+        {photos.map((p, i) => <PhotoItem key={i} photo={p} onRemove={id => this.onRemove(id)} />)}
+        <Fab className="add"><AddIcon /></Fab>
+        {this.state.confirmRemove && <ConfirmRemoveDialog onClose={this.confirmRemove}/>}
       </div>
     )
   }

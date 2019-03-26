@@ -1,3 +1,5 @@
+$highlight: #ffcc00;
+
 body {
   margin: 0;
   padding: 0;
@@ -86,7 +88,15 @@ main {
       z-index: 10;
       text-align: center;
     }
+  }
 
+  &.photos {
+    button.add {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: $highlight;
+    }
   }
 }
 
@@ -118,6 +128,14 @@ main {
     background-color: white;
     padding: 2px 4px;
     color: black;
+  }
+  .controls {
+    position: absolute;
+    bottom: 4px; right: 4px;
+    svg {
+      fill: white;
+      font-size: 32px;
+    }
   }
 }
 
