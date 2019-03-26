@@ -29,7 +29,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { photo, onRemove } = this.props
+    const { photo, onRemove, onFlag } = this.props
     const metadata = JSON.parse(photo.meta)
 
     const ts = moment(photo.created).format('DD-MM-YYYY HH:mm');
@@ -44,7 +44,7 @@ export default class extends React.Component {
         </div>
         <div className="controls">
           <DeleteIcon onClick={() => onRemove(photo.id)} />
-          <FlagIcon />
+          <FlagIcon onClick={() => onFlag(photo.id)} />
           <ShareIcon />
         </div>
       </div>

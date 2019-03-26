@@ -1,17 +1,20 @@
 import React from 'react'
-
 import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+import PhotoIcon from '@material-ui/icons/AddAPhoto';
 
 import API from './API'
 import PhotoItem from './PhotoItem'
 import ConfirmRemoveDialog from './ConfirmRemoveDialog'
+import TermsDialog from './TermsDialog'
+import FlagDrawer from './FlagDrawer'
 
 
 export default class extends React.Component {
   state = {
     photos: [],
-    confirmRemove: null
+    confirmRemove: null,
+    confirmFlag: null,
+    terms: null
   }
 
   async componentWillMount() {
@@ -23,16 +26,17 @@ export default class extends React.Component {
     this.setState({ photos })
   }
 
-  onRemove = id => {
-    this.setState({ confirmRemove: id })
-  }
-
   confirmRemove = async remove => {
-    console.log('this.state.confirmRemove', this.state.confirmRemove)
-
     API.photoBlacklist(this.state.confirmRemove)
     await this.refresh()
     this.setState({ confirmRemove: null })
+  }
+
+  confirmFlag = async reason => {
+    if (reason) {
+      await API.flagPhoto(this.state.confirmFlag, reason)
+    }
+    this.setState({ confirmFlag: null })
   }
 
   render() {
@@ -40,9 +44,22 @@ export default class extends React.Component {
 
     return (
       <div className="screen--wrapper photos">
-        {photos.map((p, i) => <PhotoItem key={i} photo={p} onRemove={id => this.onRemove(id)} />)}
-        <Fab className="add"><AddIcon /></Fab>
+        <div className="scroll">
+          {photos.map((p, i) =>
+            <PhotoItem
+              key={i}
+              photo={p}
+              onRemove={id => this.setState({ confirmRemove: id })}
+              onFlag={id => this.setState({ confirmFlag: id })}
+            />
+          )}
+        </div>
+        <Fab className="add"
+          onClick={() => this.setState({ terms: true })}
+        ><PhotoIcon /></Fab>
         {this.state.confirmRemove && <ConfirmRemoveDialog onClose={this.confirmRemove}/>}
+        {this.state.confirmFlag && <FlagDrawer onClose={this.confirmFlag}/>}
+        {this.state.terms && <TermsDialog onClose={() => this.setState({ terms: null })} />}
       </div>
     )
   }

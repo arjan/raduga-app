@@ -23,7 +23,7 @@ export default class extends React.Component {
   componentWillMount() {
     this.setState({ holiday: isHoliday() })
 
-    setInterval(this.pollCities, 1000)
+    setInterval(this.pollCities, 100000)
     this.pollCities()
   }
 

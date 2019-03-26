@@ -26,11 +26,18 @@ const API = {
     return Config.BASE_URL + "latest/clouds.png";
   },
   getRainbowPhotos: async() => {
-    const { photos } = await json('/app/photos')
-    console.log('photos', photos)
-    console.log('blacklist', blacklist)
-
-    return photos.filter(p => blacklist.indexOf(p.id) == -1)
+    const { photos } = await json('app/photos')
+    return photos.filter(p => blacklist.indexOf(p.id) === -1)
+  },
+  flagPhoto: async (id, reason) => {
+    return fetch(Config.BASE_URL + 'app/report/' + id, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ reason })
+    })
   },
   photoBlacklist: id => {
     blacklist.push(id)
