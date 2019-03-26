@@ -39,6 +39,14 @@ export default class extends React.Component {
     this.setState({ confirmFlag: null })
   }
 
+  takePhoto = async () => {
+    if (!API.termsAccepted()) {
+      this.setState({ terms: true })
+      return
+    }
+    console.log('taking phtoo')
+  }
+
   render() {
     const { photos } = this.state
 
@@ -54,12 +62,10 @@ export default class extends React.Component {
             />
           )}
         </div>
-        <Fab className="add"
-          onClick={() => this.setState({ terms: true })}
-        ><PhotoIcon /></Fab>
+        <Fab className="add" onClick={this.takePhoto} ><PhotoIcon /></Fab>
         {this.state.confirmRemove && <ConfirmRemoveDialog onClose={this.confirmRemove}/>}
         {this.state.confirmFlag && <FlagDrawer onClose={this.confirmFlag}/>}
-        {this.state.terms && <TermsDialog onClose={() => this.setState({ terms: null })} />}
+        {this.state.terms && <TermsDialog onClose={flag => { API.termsAccepted(flag); this.setState({ terms: null }); if (flag) this.takePhoto(); }} />}
       </div>
     )
   }

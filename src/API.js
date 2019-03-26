@@ -29,6 +29,10 @@ const API = {
     const { photos } = await json('app/photos')
     return photos.filter(p => blacklist.indexOf(p.id) === -1)
   },
+  termsAccepted(flag) {
+    if (!flag) return 'termsAccepted' in localStorage
+    localStorage.termsAccepted = 'true'
+  },
   flagPhoto: async (id, reason) => {
     return fetch(Config.BASE_URL + 'app/report/' + id, {
       method: 'post',
