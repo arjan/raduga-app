@@ -119,6 +119,14 @@ main {
       background-color: $highlight;
     }
   }
+
+
+  &.text-light {
+    color: #aaa;
+  }
+  &.text-dark {
+    color: #555;
+  }
 }
 
 .dynamic-background--wrapper {

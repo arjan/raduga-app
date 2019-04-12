@@ -1,6 +1,14 @@
 import React from 'react'
 import { isHoliday } from './utils/holidays'
 
+function getHour() {
+  return new Date().getHours()
+}
+
+export function textClass() {
+  return (getHour() > 6) && (getHour() < 23) ? 'text-dark' : 'text-light'
+}
+
 export default class extends React.Component {
   state = {
     hour: null,
@@ -15,7 +23,7 @@ export default class extends React.Component {
   checkHour() {
     this.setState({
       kind: !isHoliday() ? 'normal' : 'festive',
-      hour: new Date().getHours()
+      hour: getHour()
     })
   }
 

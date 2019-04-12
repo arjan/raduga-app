@@ -1,7 +1,8 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import { isHoliday } from './utils/holidays'
-import DynamicBackground from './DynamicBackground'
+import DynamicBackground, { textClass } from './DynamicBackground'
 import Globe from './Globe'
 import API from './API'
 import Config from './Config'
@@ -47,7 +48,7 @@ export default class extends React.Component {
     const { holiday } = this.state
 
     return (
-      <div className="screen--wrapper globe">
+      <div className={classNames("screen--wrapper", "globe", textClass())}>
         <DynamicBackground />
         {holiday && <div className="top">{holiday}</div>}
         {this.renderCities()}
