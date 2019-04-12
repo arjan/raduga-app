@@ -91,14 +91,26 @@ main {
   }
 
   &.photos {
+    svg.refresh {
+      position: absolute;
+      left: 10px; top: 10px;
+      z-index: 10;
+      path:first-child { fill: #fff; }
+    }
+
     div.scroll {
       flex: 1;
       height: 100vh;
       overflow: auto;
     }
     div.loading {
+      position: absolute;
+      top: 0; left: 0; right: 0;
       text-align: center;
       padding: 10px;
+      z-index: 10;
+      svg path { fill: $highlight; }
+      div { color: $highlight; }
     }
     button.add {
       position: absolute;

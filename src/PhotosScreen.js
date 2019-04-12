@@ -1,6 +1,7 @@
 import React from 'react'
 import Fab from '@material-ui/core/Fab';
 import PhotoIcon from '@material-ui/icons/AddAPhoto';
+import RefreshIcon from '@material-ui/icons/Refresh';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import API from './API'
@@ -16,7 +17,7 @@ export default class extends React.Component {
     confirmRemove: null,
     confirmFlag: null,
     terms: null,
-    loading: false
+    loading: true
   }
 
   async componentWillMount() {
@@ -65,6 +66,7 @@ export default class extends React.Component {
 
     return (
       <div className="screen--wrapper photos">
+        <RefreshIcon className="refresh" onClick={() => this.refresh()} />
         {loading ? <div className="loading"><CircularProgress /></div> : null}
         <div className="scroll">
           {photos.map((p, i) =>
