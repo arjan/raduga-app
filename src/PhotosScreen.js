@@ -1,6 +1,7 @@
 import React from 'react'
 import Fab from '@material-ui/core/Fab';
 import PhotoIcon from '@material-ui/icons/AddAPhoto';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import API from './API'
 import PhotoItem from './PhotoItem'
@@ -14,7 +15,8 @@ export default class extends React.Component {
     photos: [],
     confirmRemove: null,
     confirmFlag: null,
-    terms: null
+    terms: null,
+    loading: false
   }
 
   async componentWillMount() {
@@ -22,8 +24,9 @@ export default class extends React.Component {
   }
 
   async refresh() {
+    this.setState({ loading: true })
     const photos = await API.getRainbowPhotos()
-    this.setState({ photos })
+    this.setState({ photos, loading: false })
   }
 
   confirmRemove = async remove => {
@@ -45,17 +48,24 @@ export default class extends React.Component {
       return
     }
     if (window.cordova) {
-      takePicture()
+      try {
+        this.setState({ loading: true })
+        await takePicture()
+        await this.refresh()
+      } finally {
+        this.setState({ loading: false })
+      }
     } else {
       console.log('take photo stub!')
     }
   }
 
   render() {
-    const { photos } = this.state
+    const { photos, loading } = this.state
 
     return (
       <div className="screen--wrapper photos">
+        {loading ? <div className="loading"><CircularProgress /></div> : null}
         <div className="scroll">
           {photos.map((p, i) =>
             <PhotoItem

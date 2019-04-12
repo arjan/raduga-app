@@ -96,6 +96,10 @@ main {
       height: 100vh;
       overflow: auto;
     }
+    div.loading {
+      text-align: center;
+      padding: 10px;
+    }
     button.add {
       position: absolute;
       bottom: 10px;
@@ -147,5 +151,3 @@ main {
 .drawer > * {
   padding: 10px;
 }
-
-@import "ptr";
