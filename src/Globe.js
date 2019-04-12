@@ -13,9 +13,7 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    const { width, height } = this._div.getBoundingClientRect()
-    console.log('width', width)
-    console.log('height', height)
+    const { width } = this._div.getBoundingClientRect()
 
     // Earth params
     var radius   = 0.5,

@@ -7,7 +7,7 @@ import PhotoItem from './PhotoItem'
 import ConfirmRemoveDialog from './ConfirmRemoveDialog'
 import TermsDialog from './TermsDialog'
 import FlagDrawer from './FlagDrawer'
-
+import { takePicture } from './utils/cordova'
 
 export default class extends React.Component {
   state = {
@@ -44,7 +44,11 @@ export default class extends React.Component {
       this.setState({ terms: true })
       return
     }
-    console.log('taking phtoo')
+    if (window.cordova) {
+      takePicture()
+    } else {
+      console.log('take photo stub!')
+    }
   }
 
   render() {
