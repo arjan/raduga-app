@@ -37,10 +37,32 @@ const getUserId = () => {
   return localStorage.userId
 }
 
+const setUserId = userId => {
+  localStorage.userId = userId
+}
+
+const closestCity = null
+
 const API = {
   getUserId,
+  setUserId,
+  closestCity,
   getRainbowCities: jsonGetter('app/rainbow-cities'),
-  getClosestCities: jsonGetter('app/closest-cities'),
+  getClosestCities: () => new Promise((resolve, reject) => {
+    const getter = jsonGetter('app/closest-cities')
+
+    navigator.geolocation.getCurrentPosition(({ coords }) => {
+      getter({ lat: coords.latitude, lon: coords.longitude }).then(
+        ({ cities }) => {
+          if (cities && cities.length > 0) {
+            API.closestCity = cities[0]
+          }
+          console.log('Cities: ' + JSON.stringify(cities));
+          resolve(cities)
+        }, reject)
+    })
+  }),
+
   getCloudsURL: function() {
     return Config.BASE_URL + "latest/clouds.png";
   },

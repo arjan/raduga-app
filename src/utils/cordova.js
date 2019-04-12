@@ -34,3 +34,39 @@ export function takePicture() {
     )
   })
 }
+
+export function initializePush(onMessage) {
+  Pushy.listen();
+  Pushy.requestStoragePermission();
+
+  Pushy.register(function (err, deviceToken) {
+    // Handle registration errors
+    if (err) {
+      return alert(err);
+    }
+
+    // Display an alert with device token
+    // alert('Pushy device token: ' + deviceToken);
+    API.setUserId(deviceToken)
+
+    Pushy.subscribe('everybody', console.log)
+    Pushy.subscribe('debug', console.log)
+
+    console.log('deviceToken: ' + deviceToken)
+
+    API.getClosestCities().then(cities => {
+      cities.map(({ id }) => Pushy.subscribe('city-' + id, console.log))
+    })
+
+  });
+
+  // Listen for push notifications
+  Pushy.setNotificationListener(function (data) {
+    // Print notification payload data
+    console.log('Received notification: ' + JSON.stringify(data));
+    onMessage(data)
+    // Display an alert with the "message" payload value
+    // alert(data.message);
+  })
+
+}
