@@ -124,7 +124,9 @@ main {
 .dynamic-background--wrapper {
   @include cover;
   //  position: fixed;
-  background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-size: cover;
+  background-position: center;
 }
 
 .globe--wrapper {

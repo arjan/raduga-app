@@ -19,12 +19,10 @@ const holidays = [
 export function isHoliday() {
   const dt = moment().format('DD-MM')
 
-  let result = holidays.reduce((result, [ d, desc ]) => {
+  return holidays.reduce((result, [ d, desc ]) => {
     if (!result && d === dt) {
       return desc
     }
     return result
   }, null)
-
-  return result
 }

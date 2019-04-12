@@ -11,7 +11,7 @@ import API from './API'
 
 class App extends Component {
   state = {
-    selectedView: 0,
+    selectedView: 1,
     pushMessage: null
   }
   onViewChange = ([ selectedView ]) => {

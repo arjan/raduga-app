@@ -1,12 +1,11 @@
 import React from 'react'
 
+import { isHoliday } from './utils/holidays'
 import DynamicBackground from './DynamicBackground'
 import Globe from './Globe'
 import API from './API'
 import Config from './Config'
 import label from './labels'
-
-import { isHoliday } from './utils/holidays'
 
 function City({ city }) {
   if (!city) return null
@@ -38,7 +37,7 @@ export default class extends React.Component {
 
     return (
       <div className="bottom">
-        {label('rainbow_predicted_near')}
+        {label('rainbow_predicted_near')}{' '}
         {cities.map((c, i) => <City key={i} city={c} />)}
       </div>
     )
