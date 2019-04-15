@@ -8,11 +8,11 @@ function qs(params) {
 }
 
 function json(path, args) {
-  return fetch(Config.BASE_URL + path + qs(args || {})).then(r => r.json())
+  return fetch(Config.getBaseUrl() + path + qs(args || {})).then(r => r.json())
 }
 
 function jsonPost(path, args) {
-  return fetch(Config.BASE_URL + path, {
+  return fetch(Config.getBaseUrl() + path, {
     method: 'post',
     headers: {
       'Accept': 'application/json, text/plain, */*',
@@ -64,7 +64,7 @@ const API = {
   }),
 
   getCloudsURL: function() {
-    return Config.BASE_URL + "latest/clouds.png";
+    return Config.getBaseUrl() + "latest/clouds.png";
   },
   getRainbowPhotos: async() => {
     const { photos } = await json('app/photos')

@@ -9,7 +9,7 @@ export default class extends React.Component {
 
   photoUrl(photo, w) {
     w = w || 400
-    return Config.BASE_URL + '/photos/' + photo.variants[w+'']
+    return Config.getBaseUrl() + '/photos/' + photo.variants[w+'']
   }
 
   photoCity(meta) {
