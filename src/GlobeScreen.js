@@ -7,6 +7,7 @@ import Globe from './Globe'
 import API from './API'
 import Config from './Config'
 import label from './labels'
+import { photoMetadata } from './utils'
 
 function City({ city }) {
   if (!city) return null
@@ -19,6 +20,7 @@ export default class extends React.Component {
   state = {
     cities: [],
     holiday: null,
+    lastPhoto: null
   }
   componentWillMount() {
     this.setState({ holiday: isHoliday() })
@@ -29,7 +31,9 @@ export default class extends React.Component {
 
   pollCities = async () => {
     const { cities } = await API.getRainbowCities()
-    this.setState({ cities })
+    const photos = await API.getRainbowPhotos()
+    let lastPhoto = photos[0]
+    this.setState({ cities, lastPhoto })
   }
 
   renderCities() {
@@ -45,12 +49,15 @@ export default class extends React.Component {
   }
 
   render() {
-    const { holiday } = this.state
+    const { holiday, lastPhoto } = this.state
 
     return (
       <div className={classNames("screen--wrapper", "globe", textClass())}>
         <DynamicBackground />
-        {holiday && <div className="top">{holiday}</div>}
+        <div className="top">
+          {holiday ? <div className="item">{holiday}</div> : null}
+          {lastPhoto ? <div className="item">{label('rainbow_spotted_pre')} {photoMetadata(lastPhoto)}</div> : null}
+        </div>
         {this.renderCities()}
         <Globe />
       </div>

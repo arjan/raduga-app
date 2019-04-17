@@ -71,7 +71,7 @@ main {
 
     .bottom {
       position: absolute;
-      left: 0; right: 0; bottom: 60px;
+      left: 20px; right: 20px; bottom: 60px;
       z-index: 10;
       text-align: center;
     }
@@ -87,6 +87,9 @@ main {
       left: 0; right: 0; top: 40px;
       z-index: 10;
       text-align: center;
+      .item {
+        margin-bottom: 20px;
+      }
     }
   }
 
