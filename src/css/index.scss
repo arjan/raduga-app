@@ -118,13 +118,13 @@ main {
       position: absolute;
       bottom: 10px;
       right: 10px;
-      background-color: $highlight;
+      background-color: white;
     }
   }
 
 
   &.text-light {
-    color: #aaa;
+    color: #f8f8f8;
   }
   &.text-dark {
     color: #555;
