@@ -1,6 +1,7 @@
 $highlight: #ffcc00;
 
 body {
+  background: black;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -51,7 +52,6 @@ main {
   font-size: 14px;
 
   &.about {
-    background-color: #23538a;
     color: #666;
     div.about {
       position: relative;
@@ -66,7 +66,6 @@ main {
   }
 
   &.globe {
-    background-color: #23538a;
     color: #666;
 
     .bottom {
