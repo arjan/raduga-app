@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 import classNames from 'classnames'
 
 import { isHoliday } from './utils/holidays'
@@ -32,7 +33,13 @@ export default class extends React.Component {
   pollCities = async () => {
     const { cities } = await API.getRainbowCities()
     const photos = await API.getRainbowPhotos()
-    let lastPhoto = photos[0]
+    let lastPhoto = photos.length > 0 ? photos[0] : null
+    if (lastPhoto) {
+      const hours = moment().diff(moment(lastPhoto.created), 'hours')
+      if (hours > 4) {
+        lastPhoto = null
+      }
+    }
     this.setState({ cities, lastPhoto })
   }
 

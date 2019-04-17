@@ -7,7 +7,6 @@ import PushDialog from './PushDialog'
 import PhotosScreen from './PhotosScreen'
 import GlobeScreen from './GlobeScreen'
 import AboutScreen from './AboutScreen'
-import API from './API'
 
 class App extends Component {
   state = {
@@ -21,8 +20,6 @@ class App extends Component {
   componentDidMount() {
     if (window.cordova) {
       initializePush(pushMessage => this.setState({ pushMessage }))
-    } else {
-      API.getClosestCities().then(console.log)
     }
   }
 

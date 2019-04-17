@@ -57,7 +57,6 @@ const API = {
           if (cities && cities.length > 0) {
             API.closestCity = cities[0]
           }
-          console.log('Cities: ' + JSON.stringify(cities));
           resolve(cities)
         }, reject)
     })
