@@ -16,7 +16,8 @@ const Config = {
       return 'http://raduga.miraclethings.nl/'
     }
   },
-  getLocale
+  getLocale,
+  debug: true
 }
 
 export default Config

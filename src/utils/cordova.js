@@ -1,4 +1,5 @@
 import API from '../API'
+import Config from '../Config'
 
 export function takePicture() {
   return new Promise((resolve, reject) => {
@@ -50,11 +51,14 @@ export function initializePush(onMessage) {
     API.setUserId(deviceToken)
 
     Pushy.subscribe('everybody', console.log)
-    Pushy.subscribe('debug', console.log)
+    if (Config.debug) {
+      Pushy.subscribe('debugging', console.log)
+    }
 
     console.log('deviceToken: ' + deviceToken)
 
     API.getClosestCities().then(cities => {
+      // console.log(JSON.stringify(cities))
       cities.map(({ id }) => Pushy.subscribe('city-' + id, console.log))
     })
 
