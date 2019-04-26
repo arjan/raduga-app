@@ -60,7 +60,7 @@ export default class extends React.Component {
 
     return (
       <div className={classNames("screen--wrapper", "globe", textClass())}>
-        <DynamicBackground />
+        <DynamicBackground festive={!!lastPhoto} />
         <div className="top">
           {holiday ? <div className="item">{holiday}</div> : null}
           {lastPhoto ? <div className="item">{label('rainbow_spotted_pre')} {photoMetadata(lastPhoto)}</div> : null}

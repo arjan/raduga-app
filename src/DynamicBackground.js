@@ -2,11 +2,12 @@ import React from 'react'
 import { isHoliday } from './utils/holidays'
 
 function getHour() {
-  return new Date().getHours()
+  const hour = new Date().getHours()
+  return hour
 }
 
 export function textClass() {
-  return (getHour() > 6) && (getHour() < 23) ? 'text-dark' : 'text-light'
+  return (getHour() > 6) && (getHour() < 20) ? 'text-dark' : 'text-light'
 }
 
 export default class extends React.Component {
@@ -22,7 +23,7 @@ export default class extends React.Component {
 
   checkHour() {
     this.setState({
-      kind: !isHoliday() ? 'normal' : 'festive',
+      kind: (this.props.festive || isHoliday()) ? 'festive' : 'normal',
       hour: getHour()
     })
   }
