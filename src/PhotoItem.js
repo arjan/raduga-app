@@ -6,6 +6,13 @@ import { photoMetadata, photoUrl } from './utils'
 
 export default class extends React.Component {
 
+  share() {
+    const { photo, onRemove, onFlag } = this.props
+    const description = photoMetadata(photo)
+    const url = photoUrl(photo, 800)
+    window.plugins.socialsharing.share(description, 'Cǎihóng', url, null)
+  }
+
   render() {
     const { photo, onRemove, onFlag } = this.props
     const description = photoMetadata(photo)
@@ -20,7 +27,7 @@ export default class extends React.Component {
         <div className="controls">
           <DeleteIcon onClick={() => onRemove(photo.id)} />
           <FlagIcon onClick={() => onFlag(photo.id)} />
-          <ShareIcon onClick={() => navigator.share({ url })} />
+          <ShareIcon onClick={() => this.share()} />
         </div>
       </div>
     )

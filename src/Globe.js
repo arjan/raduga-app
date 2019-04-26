@@ -39,8 +39,12 @@ export default class extends React.Component {
     sphere.rotation.y = rotation;
     scene.add(sphere);
 
-    var light = new THREE.DirectionalLight(0xffffff, 1);
+    var light = new THREE.DirectionalLight(0xffffff, 0.6);
     light.position.set(-5,2,2);
+    camera.add(light);
+
+    light = new THREE.DirectionalLight(0xffffff, 0.2);
+    light.position.set(5,2,2);
     camera.add(light);
 
     scene.add(camera);
