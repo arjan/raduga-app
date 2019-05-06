@@ -9,6 +9,7 @@ body {
                sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
 }
 
 @mixin cover {
@@ -49,6 +50,8 @@ main {
 .screen--wrapper {
   @include cover;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
   font-size: 14px;
 
   &.about {
@@ -104,6 +107,7 @@ main {
       flex: 1;
       height: 100vh;
       overflow: auto;
+      -webkit-overflow-scrolling: touch;
     }
     div.loading {
       position: absolute;
