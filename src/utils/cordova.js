@@ -8,7 +8,6 @@ export function takePicture() {
         navigator.camera.getPicture(
           function ok(data) {
             const fileURL = "data:image/jpeg;base64," + data
-            console.log('Got picture: ' + fileURL);
             var meta = {} // $rootScope.closestCity ? $.extend({}, $rootScope.closestCity) : {};
             meta.lat = position.coords.latitude;
             meta.lng = position.coords.longitude;
