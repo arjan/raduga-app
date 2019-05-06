@@ -48,7 +48,9 @@
         <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
             <string>Let the user take photos of rainbows.</string>
         </config-file>
-
+        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
+            <string>Report location to be able to notify rainbow predictions.</string>
+        </config-file>
     </platform>
 
     <hook type="before_prepare" src="scripts/build.sh" />
