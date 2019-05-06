@@ -473,7 +473,7 @@ ion-slide.globe ng-include > div {
   ion-slide.globe ng-include > div div.globe.fallback {
     z-index: 0;
     position: relative; }
-    /* line 47, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
+    /* line 47, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
     ion-slide.globe ng-include > div div.globe.fallback div {
       position: absolute;
       left: 0;
@@ -483,7 +483,7 @@ ion-slide.globe ng-include > div {
       margin: 20px;
       border-radius: 50%;
       background-size: auto 100%; }
-    /* line 54, /home/arjan/devel/raduga/app/app/styles/_globe.scss */
+    /* line 54, /Users/arjan/devel/raduga/raduga-app/app/styles/_globe.scss */
     ion-slide.globe ng-include > div div.globe.fallback div.earth {
       background-image: url(../images/earth.jpg); }
 
@@ -565,4 +565,3 @@ ion-slide.about ng-include > div div.container {
 /* line 59, /home/arjan/devel/raduga/app/app/styles/app.scss */
 body.platform-ios div.about div.container, body.platform-ios div.globe div.container {
   margin-top: 15px; }
-

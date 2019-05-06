@@ -83,10 +83,12 @@
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string></string>
     <key>NSMainNibFile</key>
-    <string/>
+    <string></string>
     <key>NSMainNibFile~ipad</key>
-    <string/>
+    <string></string>
     <key>UIInterfaceOrientation</key>
     <array>
       <string>UIInterfaceOrientationPortrait</string>

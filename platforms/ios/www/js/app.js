@@ -523,8 +523,7 @@ angular
     .filter('cityName', function(Locale) {
         return function(c) {
             if (!c) return null;
-            var k = 'name_' + Locale.language();
-            return c[k];
+            return c.name;
         };
     })
 
