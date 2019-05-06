@@ -54,7 +54,6 @@
     "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
     "pushy-cordova": "^1.0.25",
-    "pushy-cordova-receiver": "file:plugins/pushy-cordova/receiver",
     "react": "^16.8.5",
     "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
