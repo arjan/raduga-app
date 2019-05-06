@@ -41,6 +41,14 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+
+        <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
+            <string>Let the user pick and upload photos from the library.</string>
+        </config-file>
+        <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+            <string>Let the user take photos of rainbows.</string>
+        </config-file>
+
     </platform>
 
     <hook type="before_prepare" src="scripts/build.sh" />
