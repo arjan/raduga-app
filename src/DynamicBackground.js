@@ -7,7 +7,7 @@ function getHour() {
 }
 
 export function textClass() {
-  return (getHour() > 6) && (getHour() < 20) ? 'text-dark' : 'text-light'
+  return (getHour() > 7) && (getHour() < 21) ? 'text-dark' : 'text-light'
 }
 
 export default class extends React.Component {
